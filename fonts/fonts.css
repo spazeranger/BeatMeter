@@ -1,0 +1,6 @@
+/* Barlow og Barlow Condensed. Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow). SIL Open Font License 1.1 (https://openfontlicense.org). Hentes lokalt, ikke fra tredjepart. */
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(Barlow-Regular.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(Barlow-Medium.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(Barlow-SemiBold.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:500;font-display:swap;src:url(BarlowCondensed-Medium.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(BarlowCondensed-SemiBold.woff2) format('woff2')}
