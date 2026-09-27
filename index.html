@@ -6,13 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Mål afvigelse pr. døgn og beat error på dit mekaniske ur med telefonens mikrofon. Gratis og direkte i browseren.">
 <meta name="theme-color" content="#16284a">
-<title>Urmåler: mål dit mekaniske ur med telefonen</title>
+<title>BeatMeter: mål dit mekaniske ur med telefonen</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#d4b061" stroke-width="2" aria-hidden="true"><circle cx="15" cy="15" r="12"/><path d="M15 7v8l6 4" stroke="#e3e7ee" stroke-linecap="round"/></svg>Urmåler</a>
+  <a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#d4b061" stroke-width="2" aria-hidden="true"><circle cx="15" cy="15" r="12"/><path d="M15 7v8l6 4" stroke="#e3e7ee" stroke-linecap="round"/></svg>BeatMeter</a>
   <nav class="nav" aria-label="Hovedmenu"><a href="maal.html">Mål dit ur</a><a href="guides.html">Vejledninger</a></nav>
 </div></header>
 <main>
@@ -23,7 +23,7 @@
     <div class="ctas"><a class="btn gold" href="maal.html">Start måling</a><a class="btn line" href="#maaling">Sådan virker det</a></div>
   </div>
   <div class="phone" aria-hidden="true">
-  <div class="cond" style="font-size:1.2rem">Urmåler</div>
+  <div class="cond" style="font-size:1.2rem">BeatMeter</div>
   <div class="ro">
     <div><div class="l">Afvigelse pr. døgn</div><div class="v big">+3,4<small> s</small></div></div>
     <div><div class="l">Beat error</div><div class="v">0,1<small> ms</small></div></div>
@@ -43,10 +43,10 @@
 
 
 <section class="sec" id="maaling"><div class="wrap">
-  <h2>Hvad måler Urmåler egentlig?</h2>
+  <h2>Hvad måler BeatMeter egentlig?</h2>
   <p class="body" style="margin-top:12px;max-width:640px">Inde i uret svinger uroen frem og tilbage, mange gange i timen. Hvert sving giver et lille tik, og det er tiden mellem tikkene, vi lytter efter.</p>
   <figure class="anim">
-    <canvas id="anim" role="img" aria-label="Animation: et ur åbnes, der zoomes ind på uroen, som svinger, tikkene tidsmåles i en graf, og Urmåler viser resultatet på en telefon."></canvas>
+    <canvas id="anim" role="img" aria-label="Animation: et ur åbnes, der zoomes ind på uroen, som svinger, tikkene tidsmåles i en graf, og BeatMeter viser resultatet på en telefon."></canvas>
     <figcaption><span id="animCap" aria-live="off">Et mekanisk ur tikker mellem 5 og 10 gange i sekundet.</span><button type="button" id="animBtn" class="btn line small">Pause</button></figcaption>
   </figure>
 </div></section>
@@ -62,7 +62,7 @@
 </div></section>
 
 <section class="sec"><div class="wrap split numbers">
-  <div><h2>De tre tal, der fortæller, hvordan uret har det</h2><p class="body" style="margin-top:14px">En urmager bruger en timegrapher til at lytte til værket. Urmåler gør det samme med telefonens mikrofon.</p><p style="margin-top:14px"><a href="guides.html"><b>Læs vejledningerne</b></a></p></div>
+  <div><h2>De tre tal, der fortæller, hvordan uret har det</h2><p class="body" style="margin-top:14px">En urmager bruger en timegrapher til at lytte til værket. BeatMeter gør det samme med telefonens mikrofon.</p><p style="margin-top:14px"><a href="guides.html"><b>Læs vejledningerne</b></a></p></div>
   <div>
     <div class="row"><div class="cond">Afvigelse pr. døgn</div><p class="body">Hvor mange sekunder uret vinder eller taber på et døgn. COSC-kravet til certificerede kronometre er −4 til +6 sekunder.</p></div>
     <div class="row"><div class="cond">Beat error</div><p class="body">Hvor skævt uroens sving til hver side er, målt i millisekunder. På diagrammet er det afstanden mellem tik og tak.</p></div>
@@ -76,21 +76,21 @@
 </div></section>
 
 <section class="sec" id="udstyr"><div class="wrap split">
-  <div><h2>Når telefonen ikke er nok</h2><p class="body" style="margin-top:14px">Telefonens mikrofon og ur er ikke kalibreret. Vil du måle mere præcist eller måle amplitude, kræver det specialudstyr. Her er et par idéer, hvis du vil tage dine målinger skridtet videre.</p><p class="mute" style="margin-top:14px;font-size:.9rem">Urmåler har ingen tilknytning til forhandlerne og tjener ikke på linkene.</p></div>
+  <div><h2>Når telefonen ikke er nok</h2><p class="body" style="margin-top:14px">Telefonens mikrofon og ur er ikke kalibreret. Vil du måle mere præcist eller måle amplitude, kræver det specialudstyr. Her er et par idéer, hvis du vil tage dine målinger skridtet videre.</p><p class="mute" style="margin-top:14px;font-size:.9rem">BeatMeter har ingen tilknytning til forhandlerne og tjener ikke på linkene.</p></div>
   <div class="prod">
-    <div class="card"><div class="img"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" fill="none" stroke="#14203a" stroke-width="2.5" stroke-linejoin="round"><rect x="20" y="30" width="80" height="34" rx="6"/><ellipse cx="60" cy="30" rx="26" ry="8" fill="#e4e7ec"/><path d="M100 50 h14"/><circle cx="60" cy="30" r="10" stroke="#7a5d17"/></svg></div><span class="cat">Kontaktmikrofon</span><span class="t">TGBC-sensor</span><span class="d">En lille USB-sensor, som uret ligger på, så tikket opfanges direkte gennem kassen. Bruges typisk med gratis computerprogrammer som tg eller med Android-telefoner. Vi har ikke testet den med Urmåler.</span><a class="btn dark small" href="https://www.ebay.com/sch/i.html?_nkw=TGBC+timegrapher" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;margin-top:4px">Søg på eBay</a></div>
+    <div class="card"><div class="img"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" fill="none" stroke="#14203a" stroke-width="2.5" stroke-linejoin="round"><rect x="20" y="30" width="80" height="34" rx="6"/><ellipse cx="60" cy="30" rx="26" ry="8" fill="#e4e7ec"/><path d="M100 50 h14"/><circle cx="60" cy="30" r="10" stroke="#7a5d17"/></svg></div><span class="cat">Kontaktmikrofon</span><span class="t">TGBC-sensor</span><span class="d">En lille USB-sensor, som uret ligger på, så tikket opfanges direkte gennem kassen. Bruges typisk med gratis computerprogrammer som tg eller med Android-telefoner. Vi har ikke testet den med BeatMeter.</span><a class="btn dark small" href="https://www.ebay.com/sch/i.html?_nkw=TGBC+timegrapher" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;margin-top:4px">Søg på eBay</a></div>
     <div class="card"><div class="img"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" fill="none" stroke="#14203a" stroke-width="2.5" stroke-linejoin="round"><rect x="8" y="14" width="74" height="52" rx="6"/><rect x="16" y="22" width="58" height="26" rx="2"/><path d="M20 40 l6-8 6 6 6-10 6 8 6-4 6 6 6-6" stroke="#7a5d17"/><circle cx="24" cy="57" r="3"/><circle cx="36" cy="57" r="3"/><rect x="90" y="36" width="24" height="30" rx="4"/><circle cx="102" cy="36" r="8" fill="#e4e7ec"/></svg></div><span class="cat">Timegrapher</span><span class="t">Weishi No. 1000</span><span class="d">Et udbredt instrument til hobby og værksted. Viser afvigelse, amplitude og beat error i realtid, og mikrofon følger med.</span><a class="btn dark small" href="https://www.cousinsuk.com/product/weishi-1000" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;margin-top:4px">Se hos Cousins UK</a></div>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap"><div class="support">
-  <div><div class="cond" style="font-size:2rem">Urmåler er gratis</div><p>Har du haft glæde af vores målinger, kan du give en kop kaffe og støtte den videre udvikling.</p></div>
+  <div><div class="cond" style="font-size:2rem">BeatMeter er gratis</div><p>Har du haft glæde af vores målinger, kan du give en kop kaffe og støtte den videre udvikling.</p></div>
   <span class="btn gold" aria-disabled="true" title="Kommer senere">Giv en kaffe</span>
 </div></div></section>
 </main>
 <script src="anim.js" defer></script>
 <footer><div class="wrap">
-  <div style="max-width:560px">Urmåler er et hobbyværktøj til at måle mekaniske ure med telefonens mikrofon. Det er ikke et kalibreret måleinstrument og erstatter ikke en urmager.</div>
+  <div style="max-width:560px">BeatMeter er et hobbyværktøj til at måle mekaniske ure med telefonens mikrofon. Det er ikke et kalibreret måleinstrument og erstatter ikke en urmager.</div>
   <div><a href="privatliv.html">Privatliv og cookies</a> · Testversion</div>
 </div></footer>
 </body>
