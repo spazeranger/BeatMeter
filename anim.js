@@ -1,4 +1,4 @@
-/* Urmåler: animation af hvad appen måler. Tegnes i canvas, ingen billedfiler. */
+/* BeatMeter: animation af hvad appen måler. Tegnes i canvas, ingen billedfiler. */
 (function(){
 "use strict";
 var cv=document.getElementById("anim");if(!cv)return;
@@ -51,7 +51,7 @@ function caseRing(al){g.save();g.globalAlpha=al;circ(0,0,R+10,null,"#aab0ba",12)
   g.fillStyle="#aab0ba";g.fillRect(R+14,-10,14,20);[[-1,-1],[1,-1],[-1,1],[1,1]].forEach(function(p){g.fillRect(p[0]*R*.55-12,p[1]*(R+6)-(p[1]<0?30:0),24,30);});g.restore();}
 function phone(x,y,al,ts,t){g.save();g.globalAlpha=al;g.translate(x,y);
   g.fillStyle="#0b1426";rr(0,0,190,330,26);g.fill();g.fillStyle="#e4e7ec";rr(9,9,172,312,19);g.fill();
-  g.fillStyle="#14203a";g.font="600 15px 'Barlow Condensed',sans-serif";g.fillText("Urmåler",22,36);
+  g.fillStyle="#14203a";g.font="600 15px 'Barlow Condensed',sans-serif";g.fillText("BeatMeter",22,36);
   g.font="10px Barlow,sans-serif";g.fillStyle="#5d6678";g.fillText("Afvigelse pr. døgn",22,56);
   var shown=Math.min(1,ts/4);g.font="600 30px 'Barlow Condensed',sans-serif";g.fillStyle="#2d7a4b";g.fillText(ts>1.2?"+3,4":"...",22,86);
   g.font="10px Barlow,sans-serif";g.fillStyle="#5d6678";g.fillText("Beat error",112,56);g.font="600 18px 'Barlow Condensed',sans-serif";g.fillStyle="#14203a";g.fillText(ts>1.2?"0,3 ms":"...",112,82);
@@ -92,7 +92,7 @@ function draw(t){g.setTransform(dpr*cv.width/(W*dpr),0,0,dpr*cv.width/(W*dpr),0,
   var pa=seg(t,17.5,19);if(pa>0){g.save();g.translate(L.px,L.py);g.scale(L.ps,L.ps);phone(0,0,pa,Math.max(0,t-18.5),t);g.restore();}
   if(t>12&&t<17){g.fillStyle=C.mute;g.font=""+fs(12)+"px Barlow,sans-serif";g.fillText("Vist i slowmotion",L.slow[0],L.slow[1]);}
   if(fade>0){g.fillStyle="rgba(15,26,48,"+fade+")";g.fillRect(0,0,W,H);}
-  caption(t<3.5?"Et mekanisk ur tikker mellem 5 og 10 gange i sekundet.":t<7.5?"Under skiven sidder værket.":t<11?"Uroen styrer tiden. Den svinger frem og tilbage.":t<17.5?"Hvert sving giver et tik. Tiden mellem tikkene afgør, om uret vinder eller taber.":"Urmåler lytter med, tidsstempler hvert tik og regner afvigelsen ud.");}
+  caption(t<3.5?"Et mekanisk ur tikker mellem 5 og 10 gange i sekundet.":t<7.5?"Under skiven sidder værket.":t<11?"Uroen styrer tiden. Den svinger frem og tilbage.":t<17.5?"Hvert sving giver et tik. Tiden mellem tikkene afgør, om uret vinder eller taber.":"BeatMeter lytter med, tidsstempler hvert tik og regner afvigelsen ud.");}
 function setBtn(){if(btn){btn.textContent=paused?"Afspil":"Pause";btn.setAttribute("aria-pressed",paused?"true":"false");}}
 if(btn)btn.addEventListener("click",function(){if(paused){paused=false;t0=performance.now()-pauseAt*1000;requestAnimationFrame(frame);}else{paused=true;pauseAt=((performance.now()-t0)/1000)%T;}setBtn();});
 size();window.addEventListener("resize",function(){size();if(paused)draw(pauseAt);});
