@@ -14,43 +14,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Korte vejledninger til at måle dit mekaniske ur og forstå tallene.">
-<meta name="theme-color" content="#16284a">
+<meta name="theme-color" content="#F5F3EC">
 <title>Vejledninger | BeatMeter</title>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="preload" href="fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
+<a class="skip" href="#main">Spring til indhold</a>
 <header class="top"><div class="wrap">
-  <a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#d4b061" stroke-width="2" aria-hidden="true"><circle cx="15" cy="15" r="12"/><path d="M15 7v8l6 4" stroke="#e3e7ee" stroke-linecap="round"/></svg>BeatMeter</a>
-  <nav class="nav" aria-label="Hovedmenu"><a href="maal.html">Mål dit ur</a><a href="guides.html" aria-current="page">Vejledninger</a></nav>
+  <a class="logo" href="index.html" aria-label="BeatMeter, til forsiden"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="13.5" stroke="currentColor" stroke-width="2"/><path d="M6.5 16C9 9.5 12.5 9.5 16 16S23 22.5 25.5 16" stroke="currentColor" stroke-width="1.8"/><path d="M16 3.5V16" stroke="#C76F52" stroke-width="2.4"/><circle cx="16" cy="16" r="2" fill="#C76F52" stroke="none"/></svg><span>BeatMeter</span></a>
+  <nav class="nav" aria-label="Hovedmenu"><a class="hide-s" href="privatliv.html">Privatliv</a><a href="guides.html" aria-current="page">Vejledninger</a><a class="btn primary small" href="maal.html">Mål dit ur</a></nav>
 </div></header>
-<main><div class="wrap">
-<section style="padding:56px 0 32px;max-width:760px">
+<main id="main"><div class="wrap">
+<section class="pagehead">
   <h1>Vejledninger</h1>
-  <p class="body" style="font-size:1.2rem;margin-top:14px">Korte vejledninger til at måle dit ur og forstå, hvad tallene betyder. Start med at måle, og gå i dybden, når du vil vide mere.</p>
+  <p class="lead">Korte vejledninger til at måle dit ur og forstå, hvad tallene betyder. Start med at måle, og gå i dybden, når du vil vide mere.</p>
 </section>
 <section class="cols3">
-  <div><h3 style="margin-bottom:8px">Kom i gang</h3><div class="list"><a href="guide-maal.html"><div class="t">Sådan måler du dit ur</div><div class="d">Stille rum, den rigtige placering, og hvordan du gemmer måling af hver stilling.</div></a><a href="guide-frekvens.html"><div class="t">Hvilken frekvens slår mit ur med?</div><div class="d">Find slagtallet via appen, værket eller producenten.</div></a></div></div>
-  <div><h3 style="margin-bottom:8px">Forstå målingen</h3><div class="list"><a href="guide-afvigelse.html"><div class="t">Afvigelse og beat error forklaret</div><div class="d">Hvad de to tal betyder, og hvad der er normalt.</div></a><a href="guide-diagrammer.html"><div class="t">Sådan læser du diagrammerne</div><div class="d">Spor, Speedometer, Historik og Intervaller, forklaret med eksempler.</div></a><a href="guide-stillinger.html"><div class="t">Hvorfor går mit ur anderledes i forskellige stillinger?</div><div class="d">Tyngdekraft, friktion og hvorfor natstillingen betyder mest.</div></a><a href="guide-telefon.html"><div class="t">Hvor præcis er en telefon som timegrapher?</div><div class="d">Hvad du kan stole på, og hvornår rigtigt udstyr er pengene værd.</div></a></div></div>
-  <div style="display:flex;flex-direction:column;gap:24px">
-    <div><h3 style="margin-bottom:8px">Gå i dybden</h3><div class="list"><a href="guide-amplitude.html"><div class="t">Løftevinkel og amplitude</div><div class="d">Hvad amplitude fortæller, og hvorfor den er svær at måle med en telefon.</div></a></div></div>
-    <div class="support" style="padding:26px"><div><div class="cond" style="font-size:1.6rem">Klar til at måle?</div><p>Det tager et halvt minut pr. stilling.</p></div><a class="btn gold" href="maal.html">Start måling</a></div>
+  <div><h3>Kom i gang</h3><div class="list"><a href="guide-maal.html"><div class="t">Sådan måler du dit ur</div><div class="d">Stille rum, den rigtige placering, og hvordan du gemmer måling af hver stilling.</div></a><a href="guide-frekvens.html"><div class="t">Hvilken frekvens slår mit ur med?</div><div class="d">Find slagtallet via appen, værket eller producenten.</div></a></div></div>
+  <div><h3>Forstå målingen</h3><div class="list"><a href="guide-afvigelse.html"><div class="t">Afvigelse og beat error forklaret</div><div class="d">Hvad de to tal betyder, og hvad der er normalt.</div></a><a href="guide-diagrammer.html"><div class="t">Sådan læser du diagrammerne</div><div class="d">Spor, Speedometer, Historik og Intervaller, forklaret med eksempler.</div></a><a href="guide-stillinger.html"><div class="t">Hvorfor går mit ur anderledes i forskellige stillinger?</div><div class="d">Tyngdekraft, friktion og hvorfor natstillingen betyder mest.</div></a><a href="guide-telefon.html"><div class="t">Hvor præcis er en telefon som timegrapher?</div><div class="d">Hvad du kan stole på, og hvornår rigtigt udstyr er pengene værd.</div></a></div></div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-xl)">
+    <div><h3>Gå i dybden</h3><div class="list"><a href="guide-amplitude.html"><div class="t">Løftevinkel og amplitude</div><div class="d">Hvad amplitude fortæller, og hvorfor den er svær at måle med en telefon.</div></a></div></div>
+    <div class="cta" style="margin-top:0"><div><div class="ct">Klar til at måle?</div><p>Det tager et halvt minut pr. stilling.</p></div><a class="btn primary" href="maal.html">Mål dit ur <span class="arrow" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
-<section class="two" style="margin-top:64px">
+<section class="two" style="margin-top:var(--space-3xl)">
   <div class="lab">
-    <div><div style="font-size:.9rem;color:#d4b061;font-weight:600">Forstå målingen</div><h2 style="margin-top:6px">Hvor galt kan det gå?</h2><p style="color:#c3cbda;margin-top:8px">Træk i skyderen, og se hvad en lille afvigelse pr. døgn bliver til, hvis du aldrig stiller uret.</p></div>
-    <div class="head"><span class="big" id="lbBig">−25</span><span style="color:#c3cbda">sek. pr. døgn</span><span class="pill" id="lbZone">Uden for COSC</span></div>
+    <div><div class="eyebrow">Forstå målingen</div><h2>Hvor galt kan det gå?</h2><p class="sub">Træk i skyderen, og se hvad en lille afvigelse pr. døgn bliver til, hvis du aldrig stiller uret.</p></div>
+    <div class="head"><span class="big" id="lbBig">−25</span><span class="unitl">sek. pr. døgn</span><span class="pill" id="lbZone">Uden for COSC</span></div>
     <div><input type="range" id="lbRange" min="-60" max="60" step="1" value="-25" aria-label="Afvigelse i sekunder pr. døgn"><div class="zone"><i></i></div><div class="scale" style="margin-top:6px"><span>−60</span><span>Grøn: COSC −4 til +6</span><span>+60</span></div></div>
     <div class="chips" id="lbChips"></div>
-    <div class="res"><div><div class="k">Efter en uge</div><div class="v" id="lbW"></div><div class="k lbDir"></div></div><div><div class="k">Efter en måned</div><div class="v" id="lbM"></div><div class="k lbDir"></div></div><div><div class="k" style="color:#d4b061">Efter et år</div><div class="v" id="lbY"></div><div class="k lbDir"></div></div></div>
-    <div class="quip" style="font-weight:600;font-size:1.1rem" id="lbQuip"></div>
-    <p style="font-size:.9rem;color:#95a1b7">Overdrivelse fremmer forståelsen: i praksis stiller du uret en gang imellem, og afvigelsen påvirkes af stilling (op, ned, på siden), temperatur og hvordan du bærer det.</p>
+    <div class="res"><div><div class="k">Efter en uge</div><div class="v" id="lbW"></div><div class="k lbDir"></div></div><div><div class="k">Efter en måned</div><div class="v" id="lbM"></div><div class="k lbDir"></div></div><div><div class="k">Efter et år</div><div class="v" id="lbY"></div><div class="k lbDir"></div></div></div>
+    <div class="quip" id="lbQuip"></div>
+    <p class="note">Overdrivelse fremmer forståelsen: i praksis stiller du uret en gang imellem, og afvigelsen påvirkes af stilling (op, ned, på siden), temperatur og hvordan du bærer det.</p>
   </div>
-  <div class="box" id="service" style="padding:32px;gap:16px">
-    <div class="mute" style="font-weight:600;font-size:.9rem">Vedligehold</div>
-    <h2 style="font-size:2.1rem">Hvornår er det tid til service?</h2>
+  <div class="service" id="service">
+    <div class="label">Vedligehold</div>
+    <h2>Hvornår er det tid til service?</h2>
     <p class="body">Om afvigelsen kan løses med service, afhænger af, hvad uret er bygget til. Sammenlign med producentens forskrifter:</p>
     <div class="tbl"><table><thead><tr><th>Værk eller certifikat</th><th>Lovet afvigelse pr. døgn</th></tr></thead><tbody>
       <tr><td>Rolex Superlative Chronometer (færdigt ur)</td><td>−2 til +2 sek.</td></tr>
@@ -75,7 +80,7 @@
   function fmt(sec){var a=Math.abs(sec);if(a<60)return a+" sek.";if(a<3600){var m=Math.floor(a/60),s=a%60;return m+" min"+(s?" "+s+" sek.":"");}var h=Math.floor(a/3600),mm=Math.round((a%3600)/60);return h+" t"+(mm?" "+mm+" min":"");}
   P.forEach(function(v){var b=document.createElement("button");b.type="button";b.textContent=sgn(v)+Math.abs(v)+(v===-4||v===6?" (COSC)":"");b.dataset.v=v;b.onclick=function(){r.value=v;upd();};chips.appendChild(b);});
   function upd(){
-    var v=+r.value,y=Math.abs(v)*365,cosc=v>=-4&&v<=6,col=cosc?"#6cc58c":Math.abs(v)<=15?"#e7a257":"#f07a6e";
+    var v=+r.value,y=Math.abs(v)*365,cosc=v>=-4&&v<=6,col=cosc?"var(--color-status-good)":Math.abs(v)<=15?"var(--color-status-warn)":"var(--color-status-bad)";
     var big=document.getElementById("lbBig");big.textContent=sgn(v)+Math.abs(v);big.style.color=col;
     var z=document.getElementById("lbZone");z.textContent=cosc?"Inden for COSC":"Uden for COSC";z.style.color=col;
     document.getElementById("lbW").textContent=fmt(v*7);document.getElementById("lbM").textContent=fmt(v*30);document.getElementById("lbY").textContent=fmt(v*365);
@@ -87,8 +92,12 @@
 })();
 </script>
 <footer><div class="wrap">
-  <div style="max-width:560px">BeatMeter er et hobbyværktøj til at måle mekaniske ure med telefonens mikrofon. Det er ikke et kalibreret måleinstrument og erstatter ikke en urmager.</div>
-  <div><a href="privatliv.html">Privatliv og cookies</a> · Testversion</div>
+  <div>
+    <a class="logo" href="index.html" aria-label="BeatMeter, til forsiden"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="13.5" stroke="currentColor" stroke-width="2"/><path d="M6.5 16C9 9.5 12.5 9.5 16 16S23 22.5 25.5 16" stroke="currentColor" stroke-width="1.8"/><path d="M16 3.5V16" stroke="#C76F52" stroke-width="2.4"/><circle cx="16" cy="16" r="2" fill="#C76F52" stroke="none"/></svg><span>BeatMeter</span></a>
+    <p>BeatMeter er et hobbyværktøj til at måle mekaniske ure med telefonens mikrofon. Det er ikke et kalibreret måleinstrument og erstatter ikke en urmager.</p>
+  </div>
+  <div><div class="fh">Måling</div><ul><li><a href="maal.html">Mål dit ur</a></li><li><a href="guide-maal.html">Sådan måler du</a></li><li><a href="guide-afvigelse.html">Afvigelse og beat error</a></li></ul></div>
+  <div><div class="fh">Om</div><ul><li><a href="guides.html">Alle vejledninger</a></li><li><a href="privatliv.html">Privatliv og cookies</a></li><li>Testversion</li></ul></div>
 </div></footer>
 </body>
 </html>
