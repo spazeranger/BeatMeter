@@ -12,7 +12,13 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://spazeranger.github.io/BeatMeter/guide-afvigelse.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:site_name" content="BeatMeter">
+<meta property="og:title" content="Afvigelse og beat error forklaret | BeatMeter">
+<meta property="og:description" content="Hvad afvigelse pr. døgn og beat error betyder, og hvad der er normalt for et mekanisk ur.">
+<meta property="og:url" content="https://spazeranger.github.io/BeatMeter/guide-afvigelse.html">
 <meta name="description" content="Hvad afvigelse pr. døgn og beat error betyder, og hvad der er normalt for et mekanisk ur.">
 <meta name="theme-color" content="#F5F3EC">
 <title>Afvigelse og beat error forklaret | BeatMeter</title>
@@ -24,8 +30,6 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<a class="skip" href="#main">Spring til indhold</a>
-<a class="skip" href="#main">Spring til indhold</a>
 <a class="skip" href="#main">Spring til indhold</a>
 <header class="top"><div class="wrap">
   <a class="logo" href="index.html" aria-label="BeatMeter, til forsiden"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="13.5" stroke="currentColor" stroke-width="2"/><path d="M6.5 16C9 9.5 12.5 9.5 16 16S23 22.5 25.5 16" stroke="currentColor" stroke-width="1.8"/><path d="M16 3.5V16" stroke="#C76F52" stroke-width="2.4"/><circle cx="16" cy="16" r="2" fill="#C76F52" stroke="none"/></svg><span>BeatMeter</span></a>
@@ -40,11 +44,13 @@
 <h2 id="afvigelse">Afvigelse pr. døgn</h2>
 <p>Afvigelsen er, hvor mange sekunder uret vinder eller taber på et døgn, hvis det bliver ved med at gå som lige nu. Plus betyder, at uret går for hurtigt, og minus, at det går for langsomt.</p>
 <p>Appen regner det ud ved at sammenligne den tid, der går mellem tikkene, med den tid, der burde gå. Ved 28.800 slag i timen skal der gå præcis 125 millisekunder. Er det i snit en anelse mindre, vinder uret tid.</p>
+<figure class="fig"><svg viewBox="0 0 140 136" role="img" aria-label="Skala fra minus 10 til plus 10 sekunder pr. døgn. Viseren står på plus 4." fill="none" stroke-linecap="round" focusable="false"><path d="M30.4 109.6A56 56 0 1 1 109.6 109.6" stroke="#1A1A18" stroke-width="1.25"/><path d="M70 14V28" stroke="#1A1A18" stroke-width="2"/><path d="M121.7 48.5L114.5 52.4M18.3 48.5L25.5 52.4M109.6 109.6L102.5 102.5M30.4 109.6L37.5 102.5" stroke="#1A1A18" stroke-width="1"/><text x="70" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A18">0</text><text x="20" y="128" text-anchor="middle" font-size="10" fill="#5F5C54">−10</text><text x="120" y="128" text-anchor="middle" font-size="10" fill="#5F5C54">+10</text><path d="M70 70L111.8 83.6" stroke="#C76F52" stroke-width="2.5"/><circle cx="70" cy="70" r="6" fill="#F5F3EC" stroke="#1A1A18" stroke-width="1.25"/><circle cx="70" cy="70" r="2.2" fill="#C76F52" stroke="none"/></svg><figcaption><span class="val">+4</span><span class="unit">sekunder pr. døgn</span><span class="note">Uret vinder 4 sekunder på et døgn.</span></figcaption></figure>
 <h2 id="normalt">Hvad er normalt?</h2>
 <p>Det afhænger af uret. Certificerede kronometre skal holde sig inden for −4 til +6 sekunder i døgnet, og nogle producenter lover endnu mindre. Billigere værker har en bredere tolerance, så et ur, der går 15 sekunder forkert, kan være helt i orden for sit givne værk.</p>
 <p>Brug producentens tal som målestok, ikke andres ure. Oversigten under <a href="guides.html#service">Hvornår er det tid til service?</a> giver nogle eksempler.</p>
 <h2 id="beaterror">Beat error</h2>
 <p>Uroen svinger skiftevis til den ene og den anden side, og hvert sving giver et tik. I et perfekt justeret ur er de to sving lige lange. Beat error er, hvor skæve de er i forhold til hinanden, målt i millisekunder.</p>
+<figure class="fig wide"><svg viewBox="0 0 340 150" role="img" aria-label="To rækker af tik og tak. Øverst ligger de lige langt fra hinanden, nederst kommer tak for sent, så afstandene er skæve." fill="none" stroke-linecap="round" focusable="false"><path d="M8 34H332" stroke="#A7A399" stroke-width="1" stroke-dasharray="2 4"/><path d="M20 18V50" stroke="#C76F52" stroke-width="2.5"/><path d="M80 18V50" stroke="#1A1A18" stroke-width="2.5"/><path d="M140 18V50" stroke="#C76F52" stroke-width="2.5"/><path d="M200 18V50" stroke="#1A1A18" stroke-width="2.5"/><path d="M260 18V50" stroke="#C76F52" stroke-width="2.5"/><path d="M320 18V50" stroke="#1A1A18" stroke-width="2.5"/><text x="8" y="68" font-size="10" fill="#5F5C54">Ingen beat error: tik og tak med lige stor afstand</text><path d="M8 112H332" stroke="#A7A399" stroke-width="1" stroke-dasharray="2 4"/><path d="M20 96V128" stroke="#C76F52" stroke-width="2.5"/><path d="M92 96V128" stroke="#1A1A18" stroke-width="2.5"/><path d="M140 96V128" stroke="#C76F52" stroke-width="2.5"/><path d="M212 96V128" stroke="#1A1A18" stroke-width="2.5"/><path d="M260 96V128" stroke="#C76F52" stroke-width="2.5"/><path d="M332 96V128" stroke="#1A1A18" stroke-width="2.5"/><text x="8" y="146" font-size="10" fill="#5F5C54">Beat error: tak kommer for sent, afstandene er skæve</text></svg><figcaption><span class="note">Tik er terracotta, tak er sort. Jo skævere afstand, jo højere beat error.</span></figcaption></figure>
 <p>Høj beat error er ikke nødvendigvis et tegn på, at uret går forkert. Det fortæller mest om, hvor symmetrisk uroen svinger, og det kan en urmager justere.</p>
 <h2 id="beatnormal">Hvad er en god beat error?</h2>
 <p>Som tommelfingerregel er under 0,5 millisekunder meget fint, og op til omkring 1 millisekund er normalt. Ligger den højt i alle stillinger, er det noget, du kan spørge til ved næste service.</p>
