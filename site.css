@@ -131,7 +131,7 @@ a:hover>.arrow,.btn:hover .arrow{transform:translateX(3px)}
 .mod .mini svg{display:block;height:72px;width:auto;overflow:visible}
 .mod h3{font-size:1.35rem}
 .mod p{color:var(--color-ink-soft);font-size:1rem;line-height:1.6}
-@media (max-width:820px){.trio{grid-template-columns:1fr;gap:var(--space-xl)}.mod{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:var(--space-md);row-gap:var(--space-xs)}.mod .mini{grid-row:1 / span 3;margin:0}.mod .mini svg{height:64px}}
+@media (max-width:820px){.trio{grid-template-columns:1fr;gap:var(--space-xl)}.mod{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--space-md);row-gap:var(--space-xs);align-items:center}.mod .mini{grid-column:2;grid-row:1 / span 2;height:auto;margin:0}.mod .mini svg{height:48px}.mod .label{grid-column:1;grid-row:1;align-self:end}.mod h3{grid-column:1;grid-row:2;align-self:start}.mod p{grid-column:1 / -1;grid-row:3;margin-top:var(--space-xs)}}
 
 /* vejledninger og lister */
 .rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}

@@ -37,8 +37,9 @@ h1{margin:0;font-size:1rem;line-height:1}
 .brand:hover{color:var(--color-paper)}
 .brand svg{display:block;flex:none;transition:width var(--dur-base),height var(--dur-base)}
 #bar.compact .brand svg{width:22px;height:22px}
-.readout{display:grid;grid-template-columns:1.5fr 1fr 1fr;align-items:end;border-top:1px solid var(--line)}
-.m{padding:12px 0 0 14px;border-left:1px solid var(--line);min-width:0}
+.readout{display:grid;grid-template-columns:1.5fr 1fr 1fr;align-items:stretch;border-top:1px solid var(--line)}
+.m{padding:12px 0 0 14px;border-left:1px solid var(--line);min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+#bar.compact .m{justify-content:flex-end}
 .m:first-child{padding-left:0;border-left:0}
 .m .l{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);display:flex;align-items:center;gap:6px;white-space:nowrap}
 .m .v{font-weight:500;font-size:1.9rem;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums;margin-top:4px;transition:font-size var(--dur-base)}
