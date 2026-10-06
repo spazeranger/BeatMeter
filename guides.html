@@ -31,11 +31,22 @@
   <h1>Vejledninger</h1>
   <p class="lead">Korte vejledninger til at måle dit ur og forstå, hvad tallene betyder. Start med at måle, og gå i dybden, når du vil vide mere.</p>
 </section>
+<details class="jump" id="jump">
+  <summary><span><b>På denne side</b><span class="jc">7 vejledninger og 6 forsøg</span></span></summary>
+  <ul>
+    <li><a href="#kom-i-gang">Kom i gang<span class="h">2 vejledninger</span></a></li>
+    <li><a href="#forstaa">Forstå målingen<span class="h">4 vejledninger</span></a></li>
+    <li><a href="#gaa-i-dybden">Gå i dybden<span class="h">1 vejledning</span></a></li>
+    <li><a href="#forsoeg">Flere måder at teste<span class="h">6 forsøg</span></a></li>
+    <li><a href="#hvor-galt">Hvor galt kan det gå?<span class="h">Skyder</span></a></li>
+    <li><a href="#service">Hvornår er det tid til service?<span class="h">Tabel og tegn</span></a></li>
+  </ul>
+</details>
 <section class="cols3">
-  <div><h3>Kom i gang</h3><div class="list"><a href="guide-maal.html"><div class="t">Sådan måler du dit ur</div><div class="d">Stille rum, den rigtige placering, og hvordan du gemmer måling af hver stilling.</div></a><a href="guide-frekvens.html"><div class="t">Hvilken frekvens slår mit ur med?</div><div class="d">Find slagtallet via appen, værket eller producenten.</div></a></div></div>
-  <div><h3>Forstå målingen</h3><div class="list"><a href="guide-afvigelse.html"><div class="t">Afvigelse og beat error forklaret</div><div class="d">Hvad de to tal betyder, og hvad der er normalt.</div></a><a href="guide-diagrammer.html"><div class="t">Sådan læser du diagrammerne</div><div class="d">Spor, Speedometer, Historik og Intervaller, forklaret med eksempler.</div></a><a href="guide-stillinger.html"><div class="t">Hvorfor går mit ur anderledes i forskellige stillinger?</div><div class="d">Tyngdekraft, friktion og hvorfor natstillingen betyder mest.</div></a><a href="guide-telefon.html"><div class="t">Hvor præcis er en telefon som timegrapher?</div><div class="d">Hvad du kan stole på, og hvornår rigtigt udstyr er pengene værd.</div></a></div></div>
+  <div id="kom-i-gang"><h3>Kom i gang</h3><div class="list"><a href="guide-maal.html"><div class="t">Sådan måler du dit ur</div><div class="d">Stille rum, den rigtige placering, og hvordan du gemmer måling af hver stilling.</div></a><a href="guide-frekvens.html"><div class="t">Hvilken frekvens slår mit ur med?</div><div class="d">Find slagtallet via appen, værket eller producenten.</div></a></div></div>
+  <div id="forstaa"><h3>Forstå målingen</h3><div class="list"><a href="guide-afvigelse.html"><div class="t">Afvigelse og beat error forklaret</div><div class="d">Hvad de to tal betyder, og hvad der er normalt.</div></a><a href="guide-diagrammer.html"><div class="t">Sådan læser du diagrammerne</div><div class="d">Spor, Speedometer, Historik og Intervaller, forklaret med eksempler.</div></a><a href="guide-stillinger.html"><div class="t">Hvorfor går mit ur anderledes i forskellige stillinger?</div><div class="d">Tyngdekraft, friktion og hvorfor natstillingen betyder mest.</div></a><a href="guide-telefon.html"><div class="t">Hvor præcis er en telefon som timegrapher?</div><div class="d">Hvad du kan stole på, og hvornår rigtigt udstyr er pengene værd.</div></a></div></div>
   <div style="display:flex;flex-direction:column;gap:var(--space-xl)">
-    <div><h3>Gå i dybden</h3><div class="list"><a href="guide-amplitude.html"><div class="t">Løftevinkel og amplitude</div><div class="d">Hvad amplitude fortæller, og hvorfor den er svær at måle med en telefon.</div></a></div></div>
+    <div id="gaa-i-dybden"><h3>Gå i dybden</h3><div class="list"><a href="guide-amplitude.html"><div class="t">Løftevinkel og amplitude</div><div class="d">Hvad amplitude fortæller, og hvorfor den er svær at måle med en telefon.</div></a></div></div>
     <div class="cta" style="margin-top:0"><div><div class="ct">Klar til at måle?</div><p>Det tager et halvt minut pr. stilling.</p></div><a class="btn primary" href="maal.html">Mål dit ur <span class="arrow" aria-hidden="true">→</span></a></div>
   </div>
 </section>
@@ -74,7 +85,7 @@
 </section>
 
 <section class="two" style="margin-top:var(--space-3xl)">
-  <div class="lab">
+  <div class="lab" id="hvor-galt">
     <div><div class="eyebrow">Forstå målingen</div><h2>Hvor galt kan det gå?</h2><p class="sub">Træk i skyderen, og se hvad en lille afvigelse pr. døgn bliver til, hvis du aldrig stiller uret.</p></div>
     <div class="head"><span class="big" id="lbBig">−25</span><span class="unitl">sek. pr. døgn</span><span class="pill" id="lbZone">Uden for COSC</span></div>
     <div><input type="range" id="lbRange" min="-60" max="60" step="1" value="-25" aria-label="Afvigelse i sekunder pr. døgn"><div class="zone"><i></i></div><div class="scale" style="margin-top:6px"><span>−60</span><span>Grøn: COSC −4 til +6</span><span>+60</span></div></div>
@@ -119,6 +130,38 @@
     chips.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",+b.dataset.v===v?"true":"false");});
   }
   r.addEventListener("input",upd);upd();
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById("jump");if(!d)return;
+  var links=[].slice.call(d.querySelectorAll("a"));
+  var fab=document.createElement("div");fab.className="jump-fab";
+  fab.innerHTML='<button type="button" aria-expanded="false" aria-controls="jumpPanel"><span class="lbl">Indhold</span></button><ul id="jumpPanel" hidden></ul>';
+  var btn=fab.querySelector("button"),lbl=fab.querySelector(".lbl"),ul=fab.querySelector("ul");
+  links.forEach(function(a){var li=document.createElement("li"),b=a.cloneNode(true);li.appendChild(b);ul.appendChild(li);});
+  document.body.appendChild(fab);
+  function setOpen(o){btn.setAttribute("aria-expanded",o?"true":"false");ul.hidden=!o;fab.classList.toggle("open",o);}
+  btn.addEventListener("click",function(){setOpen(ul.hidden);});
+  ul.addEventListener("click",function(e){if(e.target.closest("a"))setOpen(false);});
+  d.addEventListener("click",function(e){if(e.target.closest("a"))d.open=false;});
+  document.addEventListener("click",function(e){if(!fab.contains(e.target))setOpen(false);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!ul.hidden){setOpen(false);btn.focus();}});
+  var items=links.map(function(a){return{a:a,t:document.getElementById(a.getAttribute("href").slice(1)),n:a.firstChild.textContent}}).filter(function(x){return x.t;});
+  var tick=false;
+  function update(){
+    tick=false;
+    var sum=d.querySelector("summary").getBoundingClientRect();
+    var show=sum.bottom<0;
+    fab.classList.toggle("on",show);
+    if(!show){setOpen(false);return;}
+    var cur=null,y=window.innerHeight*0.35;
+    items.forEach(function(x){if(x.t.getBoundingClientRect().top<=y)cur=x;});
+    lbl.textContent=cur?cur.n:"Indhold";
+    ul.querySelectorAll("a").forEach(function(a,i){if(items[i]&&items[i]===cur)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");});
+  }
+  function req(){if(!tick){tick=true;requestAnimationFrame(update);}}
+  window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);update();
 })();
 </script>
 <footer><div class="wrap">
