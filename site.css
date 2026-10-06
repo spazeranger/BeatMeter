@@ -427,7 +427,7 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 
 /* hero: rigtig måling i telefonramme */
 .appshot{margin:0;display:flex;flex-direction:column;align-items:center}
-.appshot .phone{width:min(300px,78vw);border:8px solid var(--color-ink);border-bottom:0;border-radius:38px 38px 0 0;overflow:hidden;background:#1A1A18;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.appshot .phone{width:min(320px,80vw);border:6px solid var(--color-ink);border-radius:30px;overflow:hidden;background:#1A1A18;box-shadow:0 14px 40px rgba(26,26,24,.18)}
 .appshot .phone img{display:block;width:100%;height:auto}
 .appshot figcaption{font-size:.8rem;color:var(--color-ink-soft);margin-top:var(--space-sm)}
 .fig img{display:block;width:100%;height:auto;border-radius:8px}
@@ -450,5 +450,5 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
   :root:not(.tool) svg[fill="#EFEBDF"],:root:not(.tool) svg [fill="#EFEBDF"]{fill:var(--color-paper-deep)}
   :root:not(.tool) svg[fill="#E9DFC6"],:root:not(.tool) svg [fill="#E9DFC6"]{fill:var(--color-sand-soft)}
   :root:not(.tool) svg[stroke="#E6DDCB"],:root:not(.tool) svg [stroke="#E6DDCB"]{stroke:var(--color-sand-soft)}
-  :root:not(.tool) .appshot .phone{border-color:#3A3A35}
+  :root:not(.tool) .appshot .phone{border-color:#3A3A35;box-shadow:none}
 }
