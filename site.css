@@ -176,7 +176,7 @@ footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 @media (max-width:820px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1 / -1}}
 
 /* artikler */
-.article{display:grid;grid-template-columns:minmax(0,40rem) minmax(0,19rem);gap:clamp(40px,7vw,96px);padding:clamp(32px,5vw,64px) 0 0;align-items:start;justify-content:space-between}
+.article{display:grid;grid-template-columns:minmax(0,40rem) minmax(0,19rem);gap:clamp(40px,7vw,96px);padding-top:clamp(32px,5vw,64px);align-items:start;justify-content:space-between}
 @media (max-width:900px){.article{grid-template-columns:minmax(0,1fr);gap:var(--space-xl)}}
 .prose{font-size:1.0625rem;line-height:1.75;color:var(--color-ink);display:flex;flex-direction:column;gap:var(--space-lg)}
 .prose h1{font-size:clamp(2rem,4.8vw,3rem)}
