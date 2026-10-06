@@ -399,7 +399,6 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
   .jump ul{margin-top:var(--space-sm)}
   .jump li+li,.jump-fab li+li{border-top:1px solid var(--line)}
   .jump li a,.jump-fab li a{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-md);padding:13px var(--space-lg);color:var(--color-ink);text-decoration:none;font-weight:500;line-height:1.35}
-  .jump li a .h,.jump-fab li a .h{flex:none;font-size:.82rem;font-weight:400;color:var(--color-ink-soft)}
   .jump-fab li a[aria-current="true"]{box-shadow:inset 3px 0 0 var(--color-terracotta);font-weight:600}
   .jump-fab{display:block;position:fixed;right:var(--gutter);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility 0s linear .2s}
   .jump-fab.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
