@@ -64,7 +64,7 @@ a:hover>.arrow,.btn:hover .arrow{transform:translateX(3px)}
 .hero .lead{font-size:1.2rem;line-height:1.55;color:var(--color-ink-soft);max-width:34rem;margin-top:var(--space-lg)}
 .hero .fine{font-size:.95rem;color:var(--color-ink-soft);margin-top:var(--space-md)}
 .ctas{display:flex;gap:var(--space-lg);flex-wrap:wrap;align-items:center;margin-top:var(--space-xl)}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .gaugebox{order:2;max-width:440px;margin:0 auto;width:100%}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .appshot{order:2;margin:0 auto}}
 
 .gaugebox{margin:0}
 .gauge{display:block;width:100%;height:auto;overflow:visible}
@@ -424,3 +424,31 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 .xp:hover{border-color:var(--line-strong)}
 .xp .xb{padding:0 var(--space-lg) var(--space-lg);display:flex;flex-direction:column;gap:var(--space-sm)}
 .xp .xb .d{font-size:.95rem;color:var(--color-ink-soft);line-height:1.55}
+
+/* hero: rigtig måling i telefonramme */
+.appshot{margin:0;display:flex;flex-direction:column;align-items:center}
+.appshot .phone{width:min(300px,78vw);border:8px solid var(--color-ink);border-bottom:0;border-radius:38px 38px 0 0;overflow:hidden;background:#1A1A18;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.appshot .phone img{display:block;width:100%;height:auto}
+.appshot figcaption{font-size:.8rem;color:var(--color-ink-soft);margin-top:var(--space-sm)}
+.fig img{display:block;width:100%;height:auto;border-radius:8px}
+
+/* mørk tilstand: komponenter og tegninger */
+@media (prefers-color-scheme: dark){
+  :root:not(.tool) .cta,:root:not(.tool) .lab,:root:not(.tool) .dark,:root:not(.tool) .jump-fab>button,:root:not(.tool) .skip{--color-ink:#2A2A26;--color-paper:#F5F3EC;--color-paper-mute:#C4C0B5;--color-terracotta-deep:#E39A80}
+  :root:not(.tool) .btn.primary{background:var(--color-terracotta);color:#1A1A18}
+  :root:not(.tool) .btn.primary:hover{background:var(--color-ink);color:var(--color-paper)}
+  :root:not(.tool) svg[stroke="#1A1A18"],:root:not(.tool) svg [stroke="#1A1A18"]{stroke:var(--color-ink)}
+  :root:not(.tool) svg[fill="#1A1A18"],:root:not(.tool) svg [fill="#1A1A18"]{fill:var(--color-ink)}
+  :root:not(.tool) svg[stroke="#F5F3EC"],:root:not(.tool) svg [stroke="#F5F3EC"]{stroke:var(--color-paper)}
+  :root:not(.tool) svg[fill="#F5F3EC"],:root:not(.tool) svg [fill="#F5F3EC"]{fill:var(--color-paper)}
+  :root:not(.tool) svg[stroke="#5F5C54"],:root:not(.tool) svg [stroke="#5F5C54"]{stroke:var(--color-ink-soft)}
+  :root:not(.tool) svg[fill="#5F5C54"],:root:not(.tool) svg [fill="#5F5C54"]{fill:var(--color-ink-soft)}
+  :root:not(.tool) svg[stroke="#566653"],:root:not(.tool) svg [stroke="#566653"]{stroke:var(--color-sage-deep)}
+  :root:not(.tool) svg[fill="#566653"],:root:not(.tool) svg [fill="#566653"]{fill:var(--color-sage-deep)}
+  :root:not(.tool) svg[stroke="#D6C6A8"],:root:not(.tool) svg [stroke="#D6C6A8"]{stroke:var(--color-sand)}
+  :root:not(.tool) svg[fill="#E6DDCB"],:root:not(.tool) svg [fill="#E6DDCB"]{fill:var(--color-sand-soft)}
+  :root:not(.tool) svg[fill="#EFEBDF"],:root:not(.tool) svg [fill="#EFEBDF"]{fill:var(--color-paper-deep)}
+  :root:not(.tool) svg[fill="#E9DFC6"],:root:not(.tool) svg [fill="#E9DFC6"]{fill:var(--color-sand-soft)}
+  :root:not(.tool) svg[stroke="#E6DDCB"],:root:not(.tool) svg [stroke="#E6DDCB"]{stroke:var(--color-sand-soft)}
+  :root:not(.tool) .appshot .phone{border-color:#3A3A35}
+}

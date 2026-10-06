@@ -67,3 +67,25 @@
   /* Skygge. Næsten ingen, kun til overlays. */
   --shadow-soft:0 1px 2px rgba(26,26,24,.06);
 }
+
+/* Mørk tilstand: følger telefonens indstilling. Instrumentsiden (html.tool) er altid mørk og låses til de lyse tokens. */
+:root{color-scheme:light dark}
+:root.tool{color-scheme:dark}
+@media (prefers-color-scheme: dark){
+  :root:not(.tool){
+    --color-ink:#F2EFE6;
+    --color-paper:#161614;
+    --color-sand:#4A4334;
+    --color-warm-grey:#8A867C;
+    --color-terracotta-deep:#E39A80;
+    --color-sage-deep:#A9B9A6;
+    --color-ink-soft:#B8B4A9;
+    --color-paper-deep:#21201D;
+    --color-sand-soft:#2B2923;
+    --color-paper-mute:#C4C0B5;
+    --line:rgba(245,243,236,.16);
+    --line-strong:rgba(245,243,236,.42);
+    --line-on-ink:rgba(245,243,236,.16);
+    --shadow-soft:none;
+  }
+}
