@@ -46,8 +46,8 @@ h3{font-size:1.2rem;line-height:1.3;letter-spacing:-.01em}
 .btn.small{min-height:44px;padding:0 18px;font-size:.92rem;flex-shrink:0}
 .btn[aria-disabled="true"]{border-color:var(--color-warm-grey);color:var(--color-ink-soft);background:transparent;cursor:default}
 .btn[aria-disabled="true"]:hover{background:transparent;color:var(--color-ink-soft)}
-.textlink{font-weight:500;color:var(--color-ink);text-decoration:none;border-bottom:1px solid var(--color-warm-grey);padding-bottom:2px}
-.textlink:hover{border-color:var(--color-terracotta);color:var(--color-ink)}
+.textlink{display:inline-flex;align-items:center;gap:.4em;min-height:44px;font-weight:500;color:var(--color-ink);text-decoration:underline;text-decoration-color:var(--color-warm-grey);text-decoration-thickness:1px;text-underline-offset:.3em}
+.textlink:hover{text-decoration-color:var(--color-terracotta);color:var(--color-ink)}
 .arrow{display:inline-block;transition:transform var(--dur-fast)}
 a:hover>.arrow,.btn:hover .arrow{transform:translateX(3px)}
 
@@ -55,6 +55,7 @@ a:hover>.arrow,.btn:hover .arrow{transform:translateX(3px)}
 .sec{padding:var(--space-3xl) 0 0}
 .sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-xl);align-items:end;margin-bottom:var(--space-2xl)}
 .sec-head p{color:var(--color-ink-soft);max-width:var(--measure)}
+@media (max-width:560px){.sec{padding-top:3rem}.sec-head{margin-bottom:var(--space-lg)}}
 @media (max-width:820px){.sec{padding-top:var(--space-2xl)}.sec-head{grid-template-columns:1fr;gap:var(--space-md);margin-bottom:var(--space-xl)}}
 
 /* hero */
@@ -161,6 +162,7 @@ a:hover>.arrow,.btn:hover .arrow{transform:translateX(3px)}
 .support{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:var(--space-xl) 0;display:flex;justify-content:space-between;align-items:center;gap:var(--space-xl);flex-wrap:wrap}
 .support h2,.support .st{font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
 .support p{color:var(--color-ink-soft);margin-top:6px;max-width:34rem}
+.support .soon a{display:inline-flex;align-items:center;min-height:44px}
 .support .soon{display:inline-flex;align-items:center;gap:var(--space-md);flex-wrap:wrap}
 .support .soon small{font-size:.8rem;color:var(--color-ink-soft)}
 
@@ -171,7 +173,7 @@ footer .logo{margin-bottom:var(--space-md)}
 footer p{max-width:32rem;line-height:1.6}
 footer .fh{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--space-sm);color:var(--color-ink-soft)}
 footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-footer li a{color:var(--color-ink);text-decoration:none;display:inline-block;padding:6px 0}
+footer li a{color:var(--color-ink);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:6px 0}
 footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 @media (max-width:820px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1 / -1}}
 
@@ -186,7 +188,7 @@ footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 .prose li::marker{color:var(--color-terracotta)}
 .prose .tip{font-size:1rem;line-height:1.6;background:var(--color-paper-deep);border:1px solid var(--line);border-left:3px solid var(--color-terracotta);border-radius:var(--radius-sm);padding:var(--space-md) var(--space-lg);color:var(--color-ink)}
 .crumb{font-size:.88rem;color:var(--color-ink-soft)}
-.crumb a{color:var(--color-ink-soft)}
+.crumb a{color:var(--color-ink-soft);display:inline-flex;align-items:center;min-height:44px}
 .tbl{font-size:.97rem;border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto;background:var(--color-paper)}
 .tbl table{width:100%;border-collapse:collapse}
 .tbl th,.tbl td{padding:12px 16px;text-align:left;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
@@ -196,7 +198,7 @@ footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 @media (max-width:900px){.aside{position:static}}
 .aside .ah{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--color-ink-soft);margin-bottom:var(--space-sm);display:block}
 .box{background:transparent;border:0;border-top:1px solid var(--color-ink);padding:var(--space-md) 0 0;display:flex;flex-direction:column;gap:2px}
-.box a{color:var(--color-ink);text-decoration:none;padding:7px 0;font-size:.97rem;line-height:1.4}
+.box a{color:var(--color-ink);text-decoration:none;padding:12px 0;font-size:.97rem;line-height:1.4}
 .box a:hover{color:var(--color-terracotta-deep)}
 .cta{background:var(--color-ink);color:var(--color-paper);border-radius:var(--radius-md);padding:var(--space-xl);display:flex;justify-content:space-between;align-items:center;gap:var(--space-lg);flex-wrap:wrap;margin-top:var(--space-md)}
 .cta .ct{font-size:1.5rem;font-weight:600;letter-spacing:-.02em;color:var(--color-paper)}
@@ -271,7 +273,7 @@ footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 .gnav-body{padding:4px 16px 16px;display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--line)}
 .gnav-grp{display:flex;flex-direction:column;gap:2px}
 .gnav-h{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--color-ink-soft);margin:10px 0 4px}
-.gnav-body a{color:var(--color-ink);text-decoration:none;padding:9px 10px;border-radius:var(--radius-sm);line-height:1.35;font-size:.97rem}
+.gnav-body a{color:var(--color-ink);text-decoration:none;padding:12px 10px;border-radius:var(--radius-sm);line-height:1.35;font-size:.97rem}
 .gnav-body a:hover{background:var(--color-paper-deep)}
 .gnav-body a.on{background:var(--color-paper-deep);font-weight:600;box-shadow:inset 3px 0 0 var(--color-terracotta)}
 .gnav-all{border-top:1px solid var(--line);padding-top:12px!important;margin-top:4px;font-weight:600;color:var(--color-terracotta-deep)!important}
@@ -300,7 +302,7 @@ footer li a:hover{color:var(--color-terracotta-deep);text-decoration:underline}
 .dark .mod{border-top-color:var(--line-on-ink)}
 .dark .mod .mini{color:var(--color-paper)}
 .dark .mod .label{color:var(--color-sage-soft)}
-.dark .textlink{color:var(--color-paper);border-color:var(--color-paper-mute)}
+.dark .textlink{color:var(--color-paper);text-decoration-color:var(--color-paper-mute)}
 @media (max-width:820px){.dark{margin-top:var(--space-2xl);padding:var(--space-2xl) 0}}
 
 /* klæbende sektionsbjælke (forsiden) og aktivt punkt i vejledninger */
