@@ -389,12 +389,12 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 .jump,.jump-fab{display:none}
 @media (max-width:900px){
   .jump{display:block;margin:0 0 var(--space-xl)}
-  .jump summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);min-height:56px;padding:10px var(--space-lg);background:var(--color-paper-deep);border:1px solid var(--line-strong);border-radius:var(--radius-md);color:var(--color-ink)}
+  .jump summary{list-style:none;cursor:pointer;display:block;position:relative;min-height:56px;padding:10px calc(var(--space-lg) + 24px) 10px var(--space-lg);background:var(--color-paper-deep);border:1px solid var(--line-strong);border-radius:var(--radius-md);color:var(--color-ink)}
   .jump summary::-webkit-details-marker{display:none}
   .jump summary b{display:block;font-size:1.05rem;font-weight:600;line-height:1.3}
   .jump .jc{display:block;font-size:.88rem;color:var(--color-ink-soft);line-height:1.4}
-  .jump summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid var(--color-terracotta);border-bottom:2px solid var(--color-terracotta);margin-top:-4px;transform:rotate(45deg);transition:transform .15s}
-  .jump[open] summary::after{margin-top:4px;transform:rotate(225deg)}
+  .jump summary::after{content:"";position:absolute;right:var(--space-lg);top:50%;width:9px;height:9px;border-right:2px solid var(--color-terracotta);border-bottom:2px solid var(--color-terracotta);margin-top:-6px;transform:rotate(45deg);transition:transform .15s}
+  .jump[open] summary::after{margin-top:-2px;transform:rotate(225deg)}
   .jump ul,.jump-fab ul{list-style:none;margin:0;padding:0;background:var(--color-paper);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
   .jump ul{margin-top:var(--space-sm)}
   .jump li+li,.jump-fab li+li{border-top:1px solid var(--line)}
@@ -414,12 +414,12 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 /* sammenfoldelige forsøgskort på guides.html */
 .xp-grid{align-items:start}
 .xp{background:var(--color-paper-deep);border:1px solid var(--line);border-radius:var(--radius-md);color:var(--color-ink)}
-.xp summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--space-md);align-items:center;padding:var(--space-md) var(--space-lg);min-height:64px}
+.xp summary{list-style:none;cursor:pointer;display:block;position:relative;padding:var(--space-md) calc(var(--space-lg) + 24px) var(--space-md) var(--space-lg);min-height:64px}
 .xp summary::-webkit-details-marker{display:none}
-.xp summary .cat{grid-column:1;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--color-ink-soft)}
-.xp summary .t{grid-column:1;font-size:1.1rem;font-weight:600;line-height:1.3;letter-spacing:-.01em}
-.xp summary::after{content:"";grid-column:2;grid-row:1 / span 2;width:9px;height:9px;border-right:2px solid var(--color-terracotta);border-bottom:2px solid var(--color-terracotta);margin-top:-4px;transform:rotate(45deg);transition:transform .15s}
-.xp[open] summary::after{margin-top:4px;transform:rotate(225deg)}
+.xp summary .cat{display:block;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--color-ink-soft)}
+.xp summary .t{display:block;font-size:1.1rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;margin-top:2px}
+.xp summary::after{content:"";position:absolute;right:var(--space-lg);top:50%;width:9px;height:9px;border-right:2px solid var(--color-terracotta);border-bottom:2px solid var(--color-terracotta);margin-top:-6px;transform:rotate(45deg);transition:transform .15s}
+.xp[open] summary::after{margin-top:-2px;transform:rotate(225deg)}
 .xp:hover{border-color:var(--line-strong)}
 .xp .xb{padding:0 var(--space-lg) var(--space-lg);display:flex;flex-direction:column;gap:var(--space-sm)}
 .xp .xb .d{font-size:.95rem;color:var(--color-ink-soft);line-height:1.55}
