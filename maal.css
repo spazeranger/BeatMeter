@@ -170,39 +170,6 @@ th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);white-
 th{color:var(--mute);font-weight:500;font-size:.75rem;letter-spacing:.04em}
 td button.x{padding:3px 9px;font-size:.8rem;border-radius:6px;color:var(--mute);min-height:32px}
 
-/* eksperimenter */
-.expcard{border:1px solid var(--line);border-radius:var(--radius-md);padding:14px;margin-bottom:12px;background:var(--bg)}
-.expcard:last-child{margin-bottom:0}
-.expintro{margin:0 0 12px;color:var(--mute);font-size:.9rem}
-.exphead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
-.expttl{font-weight:600}
-.expsub{font-size:.85rem;color:var(--mute);margin-top:2px}
-.expstate{font-size:.75rem;font-weight:600;color:var(--color-terracotta-soft);white-space:nowrap;padding-top:2px;text-align:right}
-.exprow{display:flex;gap:8px}
-.exprow input{flex:1;min-width:0}
-.expwatchline{font-size:.85rem;color:var(--mute);margin-bottom:10px}
-ol.expsteps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-ol.expsteps li{border-top:1px solid var(--line);padding-top:12px}
-ol.expsteps li:first-child{border-top:0;padding-top:0}
-ol.expsteps li.pending{color:var(--mute);font-size:.9rem}
-ol.expsteps li.done{font-size:.92rem;line-height:1.45}
-ol.expsteps li.active .instr{font-size:.92rem;line-height:1.5;margin-bottom:8px}
-ol.expsteps .chk{color:var(--good);font-weight:700;margin-right:5px}
-ol.expsteps .expwait{font-size:.82rem;color:var(--mute);margin:0 0 8px}
-table.exptbl{width:100%;border-collapse:collapse;font-size:.85rem;margin:2px 0 10px}
-table.exptbl th,table.exptbl td{padding:6px 4px;text-align:left;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
-table.exptbl th{color:var(--mute);font-weight:500;font-variant-numeric:normal}
-.expconcl{font-size:.92rem;line-height:1.55;margin:0 0 12px}
-.tests p{margin:0 0 10px;line-height:1.55}
-.moretests{margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
-.tests h3.subh{font-size:1.1rem;margin:0 0 4px;font-weight:600}
-.tests label{min-width:0;display:flex}
-.tests h3{font-size:1rem;margin:20px 0 6px;font-weight:600}
-.tests p.why{font-size:.88rem;color:var(--mute)}
-.tests .tool{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:12px;margin:4px 0 6px}
-.tests .tst{font-size:.92rem;margin-bottom:8px;line-height:1.5}
-.tests .tst:empty{display:none}
-.tests .tst strong{font-size:1.3rem;font-weight:500;font-variant-numeric:tabular-nums}
 
 /* ark */
 #saveSheet{position:fixed;left:0;right:0;bottom:0;z-index:42;background:var(--dial);border-top:1px solid var(--line);border-radius:var(--radius-md) var(--radius-md) 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform var(--dur-base) var(--ease)}
