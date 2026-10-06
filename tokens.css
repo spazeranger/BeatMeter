@@ -56,7 +56,7 @@
   /* Bredder */
   --content-width:1160px;
   --measure:38rem;
-  --gutter:clamp(16px,5vw,32px);
+  --gutter:clamp(20px,5vw,32px);
 
   /* Bevægelse */
   --dur-fast:150ms;
