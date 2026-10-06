@@ -176,48 +176,6 @@
     <p class="note" id="pdfNote">Seneste måling fylder én side. Hele historikken kan fylde flere.</p>
   </div>
 </section>
-
-<section class="panel" id="expPanel">
-  <h2>Eksperimenter <button class="i" data-info="exp" aria-label="Forklaring: eksperimenter">i</button></h2>
-  <p class="expintro">Små forsøg, der lærer dig dit ur at kende. De guidede forsøg har to trin: gem en måling, gør det, forsøget beder om, og gem en måling til. Så sammenligner appen dem for dig.</p>
-  <div id="expList"></div>
-  <div class="tests moretests">
-    <h3 class="subh">Flere forsøg på egen hånd</h3>
-    <p class="why">Disse forsøg strækker sig over timer og dage. Appen husker starttidspunktet, og du vender selv tilbage.</p>
-    <h3>1. Gangreserve</h3>
-    <p>Hvor længe går uret på et fuldt optræk? Træk uret helt op, tryk Start her, og lad det ligge. Når det er gået i stå, aflæser du viserne og indtaster, hvornår det stoppede.</p>
-    <p class="why">Stopper det tydeligt før den gangreserve, der står i manualen, kan hovedfjederen være træt, eller værket kan trænge til rens og smøring. Er uret automatisk, kan du også bære det en almindelig dag, lægge det om aftenen og se, hvor længe det går. Så tester du samtidig, om det automatiske optræk virker.</p>
-    <div class="tool" id="prTool">
-      <div class="tst" id="prStatus"></div>
-      <div class="row" id="prStartRow"><button id="prStart">Uret er trukket helt op, start nu</button></div>
-      <div id="prStopRow" hidden>
-        <label>Hvornår gik uret i stå?<input type="datetime-local" id="prStop"></label>
-        <div class="row" style="margin-top:8px"><button id="prCalc">Beregn gangreserve</button><button id="prReset" class="ghost">Start forfra</button></div>
-      </div>
-    </div>
-
-    <h3>2. Afvigelse i hverdagen</h3>
-    <p>Det mest retvisende tal får du ved at bære uret som normalt og sammenligne med telefonens ur efter nogle dage. Stil uret så præcist som muligt, eller notér hvor meget det afviger nu, og tryk Start. Kom tilbage om et par dage, og skriv hvor meget det så afviger.</p>
-    <p class="why">Resultatet tager højde for din måde at bære uret på og natstillingen. Sammenlign det med vurderingen ovenfor.</p>
-    <div class="tool" id="dtTool">
-      <div class="tst" id="dtStatus"></div>
-      <div id="dtStartRow">
-        <label>Hvor mange sekunder afviger uret nu? (minus, hvis det er bagud)<input type="number" id="dtOff0" value="0" step="1" inputmode="numeric"></label>
-        <div class="row" style="margin-top:8px"><button id="dtStart">Start målingen</button></div>
-      </div>
-      <div id="dtEndRow" hidden>
-        <label>Hvor mange sekunder afviger uret nu?<input type="number" id="dtOff1" step="1" inputmode="numeric"></label>
-        <div class="row" style="margin-top:8px"><button id="dtCalc">Beregn</button><button id="dtReset" class="ghost">Start forfra</button></div>
-      </div>
-    </div>
-
-    <h3>3. Fuldt optrukket mod næsten afladet</h3>
-    <p>Forsøget "Fuldt optrukket mod halvt optrukket" ovenfor sammenligner to niveauer med det samme. Vil du se, hvad der sker, når fjederen næsten er løbet ud, kan du selv gentage det: mål og gem uret lige efter optræk, lad det gå næsten helt i stå uden at trække det op, og mål igen i samme stilling. Et sundt ur ændrer sig kun lidt. Falder amplituden eller ændrer afvigelsen sig meget, kan det være et tegn på, at værket trænger til service.</p>
-
-    <h3>4. Magnetisme</h3>
-    <p>Begynder uret pludselig at vinde meget tid, kan det være blevet magnetiseret, fx af en højttaler, en tablet eller en magnetlås på en taske. Hold et kompas tæt på uret og bevæg det langsomt rundt. Slår nålen ud, når den passerer uret, er det sandsynligvis magnetiseret. En urmager kan afmagnetisere det hurtigt.</p>
-  </div>
-</section>
 <nav class="foot" aria-label="Sidefod"><a href="index.html">Til forsiden</a><span aria-hidden="true">|</span><a href="guides.html">Vejledninger</a><span aria-hidden="true">|</span><a href="privatliv.html">Privatliv</a></nav>
 </main>
 
@@ -280,9 +238,6 @@ const INFO={
     "Laver en trykklar rapport af dine målinger, tegnet i gammeldags journal-stil, med diagrammer, nøgletal og stilling.",
     "Seneste måling giver én side med den nyeste gemte måling for det valgte ur. Hele historikken giver en tabel og en graf over alle gemte målinger for uret, fordelt over flere sider, hvis der er mange.",
     "Rapporten dannes på din egen telefon. Der sendes intet nogen steder hen, og du skal selv trykke Eksportér for at gemme filen."]],
-  exp:["Eksperimenter",[
-    "Hvert eksperiment er to målinger med en bestemt ændring imellem, fx en nat, en anden stilling eller mindre optræk.",
-    "Gem trin 1, gør det, instruktionen beder om, og gem trin 2. Så viser appen de to målinger side om side med en kort forklaring. Grænserne for, hvad der tæller som en stor eller lille forskel, er tommelfingerregler, ikke faste krav."]],
   diag:["Vurdering",[
     "En samlet, vejledende vurdering af det valgte ur ud fra den nyeste gemte måling i hver stilling. Farverne bygger på tommelfingerregler, ikke på producentens specifikationer for netop dit ur.",
     "Afvigelse: gennemsnittet af stillingerne. Grøn er inden for COSC-kravet på −4 til +6 s/døgn, gul op til ±15, rød mere end det. Et billigt ur uden certifikat kan godt være i orden uden for det grønne felt.",
@@ -807,7 +762,7 @@ function loop(ts){
       const now=total/sr;
       if(now-lastHistT>=1){rateHist.push({t:now,r:res.rate});lastHistT=now;if(rateHist.length>900)rateHist.shift();}
     }
-    renderNumbers(res);drawTrace(res);updateSaveBtn();expUpdateButtons();
+    renderNumbers(res);drawTrace(res);updateSaveBtn();
     ampUpdate();renderAmp();drawTick();
     if(!res){
       const c=onsets.filter(t=>t>total/sr-3).length;
@@ -989,7 +944,7 @@ function renderNight(rows,avg){
   }
   $("nightOut").textContent=txt;
 }
-function renderAll(){renderLog();renderSummary();renderDiag();renderExperiments();renderPdfPanel();}
+function renderAll(){renderLog();renderSummary();renderDiag();renderPdfPanel();}
 
 // ---------- controls ----------
 $("startBtn").addEventListener("click",()=>running?stop():start());
@@ -1722,161 +1677,6 @@ $("ampFold").addEventListener("toggle",()=>{try{localStorage.setItem("urmaaler-a
 $("diagWatch").addEventListener("change",renderDiag);
 $("nightPos").addEventListener("change",renderDiag);
 $("nightHours").addEventListener("change",renderDiag);
-// ---------- test selv ----------
-const jget=k=>{try{return JSON.parse(localStorage.getItem(k)||"null");}catch(_){return null;}};
-const jset=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,JSON.stringify(v));}catch(_){}};
-const dtLocal=d=>{const z=n=>String(n).padStart(2,"0");return `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}T${z(d.getHours())}:${z(d.getMinutes())}`;};
-const whenTxt=t=>new Date(t).toLocaleString("da-DK",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
-const durTxt=ms=>{const m=Math.round(ms/60000),h=Math.floor(m/60);return h?`${h} t ${m%60} min`:`${m} min`;};
-function prRender(){
-  const st=jget("urmaaler-pr"),out=$("prStatus");
-  $("prStartRow").hidden=!!st;$("prStopRow").hidden=!st;
-  const prDone=!!(st&&st.stop);$("prStop").closest("label").hidden=prDone;$("prCalc").hidden=prDone;
-  if(!st){out.textContent="";return;}
-  if(st.stop){out.innerHTML="";out.append("Gangreserve: ");const b=document.createElement("strong");b.textContent=durTxt(st.stop-st.start);out.append(b);out.append(` (fra ${whenTxt(st.start)} til ${whenTxt(st.stop)}).`);return;}
-  out.textContent=`Startet ${whenTxt(st.start)}. Har kørt i ${durTxt(Date.now()-st.start)} indtil videre. Husk: viserne viser kun 12 timer, så tjek dato og tid, når du indtaster.`;
-  if(!$("prStop").value)$("prStop").value=dtLocal(new Date());
-}
-$("prStart").addEventListener("click",()=>{jset("urmaaler-pr",{start:Date.now()});$("prStop").value="";prRender();});
-$("prCalc").addEventListener("click",()=>{
-  const st=jget("urmaaler-pr"),v=$("prStop").value;if(!st||!v)return;
-  const stop=new Date(v).getTime();
-  if(!(stop>st.start)){$("prStatus").textContent="Tidspunktet skal ligge efter starten. Tjek dato og klokkeslæt.";return;}
-  jset("urmaaler-pr",{start:st.start,stop});prRender();
-});
-$("prReset").addEventListener("click",()=>{jset("urmaaler-pr",null);$("prStop").value="";prRender();});
-function dtRender(){
-  const st=jget("urmaaler-dt"),out=$("dtStatus");
-  $("dtStartRow").hidden=!!st;$("dtEndRow").hidden=!st;
-  const dtDone=!!(st&&st.res!=null);$("dtOff1").closest("label").hidden=dtDone;$("dtCalc").hidden=dtDone;
-  if(!st){out.textContent="";return;}
-  if(st.res!=null){
-    const days=(st.t1-st.t0)/864e5;
-    out.innerHTML="";out.append("Afvigelse i hverdagen: ");const b=document.createElement("strong");b.textContent=`${signed(st.res,1)} s/døgn`;out.append(b);
-    out.append(` over ${fmt(days,1)} døgn.`+(days<2?" Mål gerne over flere døgn for et sikrere tal.":""));return;
-  }
-  out.textContent=`Startet ${whenTxt(st.t0)} med ${signed(st.off0,0)} s. Der er gået ${fmt((Date.now()-st.t0)/864e5,1)} døgn.`;
-}
-$("dtStart").addEventListener("click",()=>{jset("urmaaler-dt",{t0:Date.now(),off0:parseFloat($("dtOff0").value)||0});$("dtOff1").value="";dtRender();});
-$("dtCalc").addEventListener("click",()=>{
-  const st=jget("urmaaler-dt"),v=parseFloat($("dtOff1").value);if(!st||isNaN(v))return;
-  const t1=Date.now(),days=(t1-st.t0)/864e5;
-  if(days<0.25){$("dtStatus").textContent="Der er gået for kort tid. Vent mindst et døgn for et brugbart tal.";return;}
-  jset("urmaaler-dt",{...st,t1,off1:v,res:(v-st.off0)/days});dtRender();
-});
-$("dtReset").addEventListener("click",()=>{jset("urmaaler-dt",null);$("dtOff0").value="0";dtRender();});
-prRender();dtRender();
-// ---------- eksperimenter ----------
-const EXP_DEFS=[
-  {id:"precision",title:"Hvor præcist går dit ur i praksis?",
-   blurb:"Mål nu, lad uret ligge stille natten over, og mål igen. Stemmer de to målinger overens?",
-   steps:[
-     {key:"now",label:"Trin 1: Mål nu",instruction:"Mål uret i den stilling, du vil lade det ligge i natten over, fx skive op, og gem målingen her."},
-     {key:"after",label:"Trin 2: Mål igen om morgenen",instruction:"Lad uret ligge helt stille i samme stilling i mindst 6 timer, gerne natten over, og mål igen.",waitHours:6}
-   ],
-   compare(a,b){
-     const d=b.rate-a.rate;
-     const rows=[{label:"Afvigelse",a:signed(a.rate,1)+" s",b:signed(b.rate,1)+" s",d:signed(d,1)+" s"}];
-     const text=Math.abs(d)<=2?"De to målinger stemmer fint overens. Du kan stole på tallet fra en enkelt måling af denne stilling.":
-       Math.abs(d)<=6?"Der er en mindre forskel mellem målingerne. Det er normalt og kan skyldes temperatur eller en lidt urolig måling.":
-       "Der er en tydelig forskel mellem målingerne. Gentag gerne forsøget med en meget stille måling begge gange, før du konkluderer noget om uret.";
-     return {rows,text};
-   }},
-  {id:"position",title:"Krone op mod skive op",
-   blurb:"Mål uret i to forskellige stillinger, og se hvor meget tyngdekraften påvirker det.",
-   steps:[
-     {key:"crown",label:"Trin 1: Mål med krone op",instruction:"Stil uret på højkant med kronen opad, og gem målingen her."},
-     {key:"dial",label:"Trin 2: Mål med skive op",instruction:"Læg uret fladt med skiven opad, og gem målingen her."}
-   ],
-   compare(a,b){
-     const d=b.rate-a.rate;
-     const rows=[{label:"Afvigelse",a:signed(a.rate,1)+" s",b:signed(b.rate,1)+" s",d:signed(d,1)+" s"}];
-     if(a.be!=null&&b.be!=null)rows.push({label:"Beat error",a:fmt(a.be,1)+" ms",b:fmt(b.be,1)+" ms",d:fmt(b.be-a.be,1)+" ms"});
-     const text=Math.abs(d)<=5?"De to stillinger går næsten ens. Uret er godt reguleret i begge stillinger.":
-       "Der er en tydelig forskel mellem stillingerne. Det er normalt for et mekanisk ur, men en stor forskel kan være noget for en urmager at kigge på ved næste service.";
-     return {rows,text};
-   }},
-  {id:"winding",title:"Fuldt optrukket mod halvt optrukket",
-   blurb:"Se om uret går anderledes, når fjederen ikke er helt spændt.",
-   steps:[
-     {key:"full",label:"Trin 1: Mål lige efter optræk",instruction:"Træk uret helt op, eller bær det en dag, hvis det er automatisk, og mål med det samme."},
-     {key:"half",label:"Trin 2: Mål ved halvt optræk",instruction:"Lad uret gå, indtil det er cirka halvvejs gennem sin gangreserve, og mål igen i samme stilling."}
-   ],
-   compare(a,b){
-     const d=b.rate-a.rate;
-     const rows=[{label:"Afvigelse",a:signed(a.rate,1)+" s",b:signed(b.rate,1)+" s",d:signed(d,1)+" s"}];
-     if(a.amp!=null&&b.amp!=null)rows.push({label:"Amplitude",a:a.amp+"°",b:b.amp+"°",d:(b.amp-a.amp>0?"+":"")+(b.amp-a.amp)+"°"});
-     const text=Math.abs(d)<=5?"Uret går stort set ens, selv når fjederen er halvt nedløbet.":
-       "Uret går tydeligt anderledes, når fjederen er halvt nedløbet. Det er normalt i et vist omfang, men en stor forskel kan pege på, at fjederen eller ankergangen trænger til service.";
-     return {rows,text};
-   }}
-];
-function expKey(id){return "urmaaler-exp-"+id;}
-function expGet(id){return jget(expKey(id));}
-function expSet(id,v){jset(expKey(id),v);}
-function expElapsedTxt(t){const ms=Date.now()-t,h=Math.floor(ms/36e5),m=Math.round((ms%36e5)/6e4);return h?`${h} t ${m} min`:`${m} min`;}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
-function renderExperiments(){
-  const wrap=$("expList");if(!wrap)return;wrap.innerHTML="";
-  for(const def of EXP_DEFS){
-    const run=expGet(def.id);
-    const card=document.createElement("div");card.className="expcard";card.dataset.exp=def.id;
-    const doneN=run?def.steps.filter(s=>run.steps[s.key]).length:0;
-    const allDone=run&&doneN===def.steps.length;
-    const badge=!run?"Ikke startet":allDone?"Afsluttet":`Trin ${doneN+1} af ${def.steps.length}`;
-    let html=`<div class="exphead"><div><div class="expttl">${esc(def.title)}</div><div class="expsub">${esc(def.blurb)}</div></div><div class="expstate">${badge}</div></div>`;
-    if(!run){
-      let w="";try{w=localStorage.getItem("urmaaler-watch")||"";}catch(_){}
-      html+=`<div class="exprow"><input type="text" class="expwatch" placeholder="Urets navn" value="${esc(w)}" maxlength="30"><button data-act="start">Start eksperiment</button></div>`;
-    }else if(allDone){
-      const a=run.steps[def.steps[0].key],b=run.steps[def.steps[1].key],res=def.compare(a,b);
-      html+=`<div class="expwatchline">Ur: ${esc(run.watch)}</div>`;
-      html+=`<table class="exptbl"><thead><tr><th></th><th>${esc(def.steps[0].label.replace(/^Trin \d+: /,""))}</th><th>${esc(def.steps[1].label.replace(/^Trin \d+: /,""))}</th><th>Forskel</th></tr></thead><tbody>`;
-      for(const r of res.rows)html+=`<tr><td>${esc(r.label)}</td><td>${esc(r.a)}</td><td>${esc(r.b)}</td><td>${esc(r.d)}</td></tr>`;
-      html+=`</tbody></table><p class="expconcl">${esc(res.text)}</p><div class="row"><button data-act="reset">Start forfra</button></div>`;
-    }else{
-      html+=`<div class="expwatchline">Ur: ${esc(run.watch)}</div><ol class="expsteps">`;
-      def.steps.forEach((s,i)=>{
-        const done=run.steps[s.key];
-        if(done){
-          html+=`<li class="done"><span class="chk">✓</span>${esc(s.label)}: <b>${signed(done.rate,1)} s/døgn</b>${done.be!=null?`, beat error ${fmt(done.be,1)} ms`:""}</li>`;
-          return;
-        }
-        const prevKey=i>0?def.steps[i-1].key:null;
-        if(prevKey&&!run.steps[prevKey]){html+=`<li class="pending">${esc(s.label)}</li>`;return;}
-        let wait="";
-        if(s.waitHours&&prevKey){
-          const pt=run.steps[prevKey].time,el=(Date.now()-pt)/36e5;
-          wait=`<div class="expwait">Der er gået ${expElapsedTxt(pt)}. `+(el<s.waitHours?`Vent gerne til mindst ${s.waitHours} timer er gået.`:"Klar til at måle.")+"</div>";
-        }
-        html+=`<li class="active"><div class="instr">${esc(s.instruction)}</div>${wait}<button data-act="save" data-step="${s.key}" class="expsave" ${lastResult?"":"disabled"}>Gem denne måling</button></li>`;
-      });
-      html+="</ol>";
-    }
-    card.innerHTML=html;wrap.appendChild(card);
-  }
-}
-function expUpdateButtons(){document.querySelectorAll("#expList .expsave").forEach(b=>{b.disabled=!lastResult;});}
-document.addEventListener("click",e=>{
-  const b=e.target.closest("#expList button[data-act]");if(!b)return;
-  const card=b.closest(".expcard"),id=card.dataset.exp,def=EXP_DEFS.find(d=>d.id===id);if(!def)return;
-  if(b.dataset.act==="start"){
-    const inp=card.querySelector(".expwatch"),w=(inp.value||"").trim();
-    if(!w){inp.focus();return;}
-    try{localStorage.setItem("urmaaler-watch",w);}catch(_){}
-    expSet(id,{watch:w,startedAt:Date.now(),steps:{}});renderExperiments();
-  }else if(b.dataset.act==="save"){
-    const run=expGet(id);if(!run||!lastResult)return;
-    const st=ampStable();
-    run.steps[b.dataset.step]={rate:lastResult.rate,be:lastResult.be,bph:lastResult.bph,amp:(st&&st.spread<=25)?Math.round(st.A):null,time:Date.now()};
-    expSet(id,run);renderExperiments();
-    const stepDef=def.steps.find(s=>s.key===b.dataset.step);
-    setStatus(`Gemt: ${stepDef.label}.`);
-  }else if(b.dataset.act==="reset"){
-    if(!confirm("Start eksperimentet forfra? De gemte trin slettes."))return;
-    expSet(id,null);renderExperiments();
-  }
-});
 renderAll();drawTrace(null);drawScope();updateSaveBtn();
 })();
 </script>
