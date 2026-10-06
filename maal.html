@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" class="tool">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Mål afvigelse pr. døgn, beat error og slagtal på dit mekaniske ur med telefonens mikrofon. Gratis, og lyden forlader aldrig din telefon.">
@@ -18,6 +18,7 @@
 <meta name="theme-color" content="#1A1A18">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="tokens.css?v=20261006">
@@ -35,8 +36,6 @@
     </div>
     <div class="barrow">
       <div class="statusrow"><span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div class="status" id="status">Tryk Start, og læg uret med bagen mod mikrofonen.</div></div>
-      <button id="saveBtn" disabled>Gem</button>
-      <button id="startBtn">Start</button>
     </div>
   </div>
 </div>
@@ -72,8 +71,8 @@
     </label>
     <label><span class="lt">Vindue <button class="i" data-info="win" aria-label="Forklaring: målevindue">i</button></span>
       <select id="winSel">
-        <option value="10">10 sek</option>
-        <option value="20" selected>20 sek</option>
+        <option value="10" selected>10 sek</option>
+        <option value="20">20 sek</option>
         <option value="40">40 sek</option>
         <option value="60">60 sek</option>
       </select>
@@ -179,6 +178,8 @@
 <nav class="foot" aria-label="Sidefod"><a href="index.html">Til forsiden</a><span aria-hidden="true">|</span><a href="guides.html">Vejledninger</a><span aria-hidden="true">|</span><a href="privatliv.html">Privatliv</a></nav>
 </main>
 
+<div id="dock"><div class="wrap dockin"><button id="startBtn">Start</button><button id="saveBtn" disabled>Gem</button></div></div>
+
 <div class="sr" id="stateLive" role="status" aria-live="polite"></div>
 <div id="shade"></div>
 <div id="saveSheet" role="dialog" aria-modal="true" aria-labelledby="saveTitle">
@@ -252,7 +253,7 @@ const INFO={
   trace:["Spor",["Uroen svinger skiftevis den ene og den anden vej. Den ene retning kaldes tik og den anden tak. Appen tegner dem som to spor i hver sin farve.","Sporene hælder opad, når uret vinder, og nedad, når det taber. Jo stejlere, jo større afvigelse. Afstanden mellem de to spor er beat error. Prikker, der hopper rundt, betyder støj eller en urolig måling."]],
   scope:["Lydniveau og tærskel",["Kurven viser lyden fra mikrofonen de seneste 2 sekunder. Hvert tik ses som en spids.","Den stiplede linje er tærsklen. Alt, der stikker op over den, tæller som et tik."]],
   thr:["Tærskel",["Bestemmer, hvor højt en lyd skal være for at tælle som et tik.","Hæv tærsklen, hvis støj eller lyde efter tikket tæller med. Sænk den, hvis tik bliver overset. 40 % passer til de fleste ure."]],
-  win:["Målevindue",["Hvor mange sekunders tik der bruges til at beregne tallene.","Et langt vindue giver et mere stabilt og præcist tal, men reagerer langsommere, når du flytter uret. 20 sekunder er et godt kompromis."]],
+  win:["Målevindue",["Hvor mange sekunders tik der bruges til at beregne tallene.","Et langt vindue giver et mere stabilt og præcist tal, men reagerer langsommere, når du flytter uret. Standarden er 10 sekunder."]],
   pos:["Stilling",["Tyngdekraften påvirker uroen, så et ur går forskelligt afhængigt af, hvordan det ligger. Urmagere måler derfor i flere stillinger.","Skive op og ned er fladt liggende. Krone op, ned, venstre og højre er uret stående på højkant med kronen i den retning. Lodrette stillinger ligner mest, hvordan uret sidder på armen.",
     "I praksis betyder stillingen om natten mest. Ligger uret den samme vej 8 timer hver nat, trækker den stilling hele døgnets afvigelse i sin retning. Om dagen på armen skifter uret hele tiden stilling, så dér ligger afvigelsen nærmere et gennemsnit af stillingerne."]],
   summary:["Overblik pr. ur",["Bruger den nyeste måling for hver stilling.","Gennemsnit er et groft bud på den daglige afvigelse, når uret bæres. Forskel er afstanden mellem bedste og dårligste stilling. En stor forskel kan betyde, at uret ikke var trukket helt op, eller at det trænger til service."]],
@@ -294,7 +295,7 @@ let ctx=null,stream=null,proc=null,sink=null,wakeLock=null,running=false;
 let sr=48000,total=0;
 let env=0,noise=1e-4,peakAvg=0,recentPeaks=[],inTick=false,tickStart=0,tickPeak=0,lastOnset=-10;
 let onsets=[];
-let bphSel="auto",bphUsed=null,thrFrac=0.4,winSec=20;
+let bphSel="auto",bphUsed=null,thrFrac=0.4,winSec=10;
 let lastResult=null,parityMap=new Map();
 // phase lock + disturbance handling
 let lock=null,rejUntil=-1,gateRejects=[],rejLog=[],lastAccepted=-10,mState="measuring",dataStart=0,pauseStart=0,resumeAt=-10;
