@@ -35,7 +35,7 @@
       <div class="m"><div class="l">Slagtal <button class="i" data-info="bph" aria-label="Forklaring: slagtal">i</button></div><div class="v" id="bph">-</div></div>
     </div>
     <div class="barrow">
-      <div class="statusrow"><span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div class="status" id="status">Tryk Start, og læg uret med bagen mod mikrofonen.</div></div>
+      <div class="statusrow"><span class="sig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div class="status" id="status">Tryk Start, og læg uret med bagsiden mod mikrofonen.</div></div>
     </div>
   </div>
 </div>
@@ -111,7 +111,7 @@
       <li>Læg telefonen på et blødt underlag, fx et håndklæde, og læg uret direkte på mikrofonhullet i bunden af telefonen.</li>
       <li>Kig på lydniveauet: tikkene skal stikke tydeligt op over den stiplede linje. Justér tærsklen, hvis støj også tæller med.</li>
       <li>Vent, til der er gået et helt målevindue. To pæne, rette spor betyder en stabil måling.</li>
-      <li>Et automatisk ur skal være trukket op. Bær det eller drej kronen, før du måler.</li>
+      <li>Et automatisk ur skal være trukket op. Bær det en tid, eller drej kronen, før du måler.</li>
       <li>Mål i flere stillinger, og gem hver måling, så du kan sammenligne.</li>
     </ul>
     <p>Telefonens eget ur er ikke et kalibreret laboratorieur. En fejl på et par sekunder i døgnet kan komme fra telefonen selv. Fejlen rammer alle målinger ens, så forskellen mellem stillinger er mere pålidelig end det absolutte tal. Amplitude er eksperimentel og bør sammenlignes med en rigtig timegrapher.</p>
@@ -121,7 +121,7 @@
 
 <div class="divider">
   <h2>Gemte målinger</h2>
-  <p>Her ligger de målinger, du har gemt på denne telefon. Tryk Gem øverst for at gemme den aktuelle måling.</p>
+  <p>Her ligger de målinger, du har gemt på denne telefon. Tryk Gem nederst for at gemme den aktuelle måling.</p>
 </div>
 
 <section class="panel" id="diagPanel">
@@ -212,14 +212,14 @@ const fmt=(x,d)=>x.toLocaleString("da-DK",{minimumFractionDigits:d,maximumFracti
 // ---------- info texts ----------
 const INFO={
   rate:["Afvigelse pr. døgn",["Hvor mange sekunder uret vinder (+) eller taber (−) på et døgn, hvis det bliver ved med at gå som lige nu.","Grøn betyder inden for COSC-kravet til certificerede kronometre, −4 til +6 sekunder. Orange er op til ±15 sekunder. Rød er mere end det.",
-    {h:"Sådan kan du tjekke, om tallet er troværdigt"},
-    "Statuslinjen bør skrive, at målingen er stabil, og linjen i Historik bør være flad, når uret ligger stille. Mål gerne samme stilling to gange: tallene bør ligge tæt på hinanden. Viser alle dine ure en afvigelse i samme retning, kan en del af den komme fra telefonens eget ur. Det sikreste tjek er at stille uret efter et præcist ur og se, hvor meget det har flyttet sig efter et døgn på armen."]],
+    {h:"Sådan kontrollerer du, at tallet er troværdigt"},
+    "Statuslinjen bør melde, at målingen er stabil, og linjen i Historik bør være flad, når uret ligger stille. Mål gerne samme stilling to gange: tallene bør ligge tæt på hinanden. Viser alle dine ure en afvigelse i samme retning, kan en del af den komme fra telefonens eget ur. Den sikreste kontrol er at stille uret efter et præcist ur og se, hvor meget det har flyttet sig efter et døgn på armen."]],
   be:["Beat error",["Urets uro svinger frem og tilbage. Hvert sving giver et tik. Beat error er, hvor skævt de to sving er i forhold til hinanden, målt i millisekunder.","Som tommelfingerregel er under 0,5 ms meget fint og op til ca. 1 ms normalt. Ligger den højt i alle stillinger, kan en urmager justere det.",
-    {h:"Sådan kan du tjekke, om tallet er troværdigt"},
+    {h:"Sådan kontrollerer du, at tallet er troværdigt"},
     "Beat error er en egenskab ved værket og ændrer sig normalt ikke meget fra stilling til stilling. I Spor bør de to spor ligge parallelt med en fast afstand, og i Intervaller bør søjlerne skiftevis ligge over og under nul i et fast mønster. Springer tallet meget mellem to målinger af samme stilling, er målingen usikker."]],
-  bph:["Slagtal",["Hvor mange gange værket tikker i timen. 28.800 slag i timen svarer til 8 tik i sekundet, også skrevet 4 Hz.","Står slagtal på Automatisk, finder appen selv slagtallet ud fra lyden. Kender du urets slagtal, kan du vælge det, hvis appen tager fejl."]],
+  bph:["Slagtal",["Hvor mange gange værket tikker i timen. 28.800 slag i timen svarer til 8 tik i sekundet, også skrevet 4 Hz.","Står Slagtal på Automatisk, finder appen selv slagtallet ud fra lyden. Kender du urets slagtal, kan du vælge det, hvis appen tager fejl."]],
   amp:["Amplitude",["Hvor langt uroen svinger, målt i grader. Et sundt, fuldt optrukket ur svinger langt. Svinger det kort, kan det skyldes, at uret ikke er trukket helt op, eller at det trænger til service.","Appen beregner amplituden ud fra tiden mellem de små lyde inde i hvert tik. Gennem en telefonmikrofon er de ofte svære at skelne, så tallet er eksperimentelt. Sammenlign det med en rigtig timegrapher, før du stoler på det.","I vores egne forsøg er det lykkedes med ældre ure med manuelt optræk, men ikke pålideligt med moderne automatiske ure, hvor lydene i tikket flyder sammen gennem telefonens mikrofon.",
-    {h:"Sådan kan du tjekke, om tallet er troværdigt"},
+    {h:"Sådan kontrollerer du, at tallet er troværdigt"},
     "Amplituden bør være højest med skiven op og falde, når uret står på højkant. Den bør også falde, når uret har gået et døgn uden at blive trukket op. Følger målingerne det mønster, er det et godt tegn."]],
   lift:["Løftevinkel",[
     "Den vinkel, uroen drejer, mens den er i kontakt med ankeret. Den er fast for hver kaliber og bruges til at regne tiden om til amplitude.",
@@ -231,12 +231,12 @@ const INFO={
   how:["Sådan virker BeatMeter",[
     "Appen aflæser mikrofonen titusindvis af gange i sekundet. Et filter dæmper lave frekvenser som brum, ventilation og det meste af stemmer, så det skarpe metalliske tik står tilbage.",
     "Appen lærer selv, hvor støjende rummet er, og hæver eller sænker grænsen for, hvad der tæller som et tik. Tidspunktet for hvert tik findes med en præcision på brøkdele af et millisekund ved at regne mellem de enkelte lydprøver.",
-    "Ud fra rytmen genkender appen urets slagtal. Derefter tegner den en ret linje gennem hundredvis af tik på én gang og smider de tik væk, der ikke passer. Linjens hældning giver afvigelsen pr. døgn, og forskydningen mellem tik og tak giver beat error.",
+    "Ud fra rytmen genkender appen urets slagtal. Derefter tegner den en ret linje gennem hundredvis af tik på én gang og kasserer de tik, der ikke passer. Linjens hældning giver afvigelsen pr. døgn, og forskydningen mellem tik og tak giver beat error.",
     "Når målingen er stabil, låser appen sig fast på urets takt og ved på forhånd, hvornår næste tik kommer. Lyde, der kommer på det forkerte tidspunkt, fx en hoste eller en kop på bordet, bliver sorteret fra.",
     "Rører du uret eller vender det, opdager appen forstyrrelsen, sætter målingen på pause og starter selv en ny måling, når uret ligger stille igen.",
     "Alt foregår på din telefon. Ingen lyd bliver gemt eller sendt nogen steder hen."]],
   pdfrapport:["PDF-rapport",[
-    "Laver en trykklar rapport af dine målinger, tegnet i gammeldags journal-stil, med diagrammer, nøgletal og stilling.",
+    "Laver en trykklar rapport over dine målinger i gammeldags journalstil med diagrammer, nøgletal og stilling.",
     "Seneste måling giver én side med den nyeste gemte måling for det valgte ur. Hele historikken giver en tabel og en graf over alle gemte målinger for uret, fordelt over flere sider, hvis der er mange.",
     "Rapporten dannes på din egen telefon. Der sendes intet nogen steder hen, og du skal selv trykke Eksportér for at gemme filen."]],
   diag:["Vurdering",[
@@ -246,14 +246,14 @@ const INFO={
     "Vurderingen bygger på målinger med telefonens mikrofon og erstatter ikke en urmagers eftersyn."]],
   night:["Døgnafvigelse i praksis",[
     "Om natten ligger uret stille i én stilling, og om dagen på armen skifter det hele tiden. Beregningen bruger den valgte natstilling i det angivne antal timer og gennemsnittet af dine målte stillinger resten af døgnet.",
-    "Det er et groft skøn. Temperatur, hvor meget uret er trukket op, og hvordan du bevæger dig, påvirker også. Du kan bruge det til at vælge den natstilling, der udligner urets afvigelse."]],
+    "Det er et groft skøn. Temperatur, hvor meget uret er trukket op, og hvordan du bevæger dig, spiller også ind. Du kan bruge det til at vælge den natstilling, der udligner urets afvigelse."]],
   gauge:["Speedometer",["Viseren peger på urets afvigelse pr. døgn. Det grønne felt er COSC-kravet, −4 til +6 sekunder. Det orange går op til ±15 sekunder, og det røde er mere end det.","Bjælken nedenunder viser beat error. Jo kortere, jo mere lige er tik og tak."]],
   history:["Historik",["Viser, hvordan den målte afvigelse har udviklet sig, siden du trykkede Start. Et nyt punkt tilføjes hvert sekund.","En flad linje betyder en stabil måling. Vender du uret, ses springet til den nye stilling. Det grønne bånd er COSC-kravet, −4 til +6 sekunder.","Skalaen følger de fleste punkter. Enkelte ekstreme punkter vises som røde pile ved kanten, så de ikke gør resten ulæseligt. Kun pålidelige målinger kommer med i historikken."]],
   intervals:["Intervaller",["Hver søjle er tiden mellem to tik, målt som afvigelse fra gennemsnittet i millisekunder. Søjlerne skifter mellem tik-til-tak og tak-til-tik.","Er uret lige, er alle søjler næsten nul. Står den ene farve over nul og den anden under, er uret skævt, og det er det, der kaldes beat error. Enkelte søjler, der stikker langt ud, er støj."]],
   trace:["Spor",["Uroen svinger skiftevis den ene og den anden vej. Den ene retning kaldes tik og den anden tak. Appen tegner dem som to spor i hver sin farve.","Sporene hælder opad, når uret vinder, og nedad, når det taber. Jo stejlere, jo større afvigelse. Afstanden mellem de to spor er beat error. Prikker, der hopper rundt, betyder støj eller en urolig måling."]],
   scope:["Lydniveau og tærskel",["Kurven viser lyden fra mikrofonen de seneste 2 sekunder. Hvert tik ses som en spids.","Den stiplede linje er tærsklen. Alt, der stikker op over den, tæller som et tik."]],
   thr:["Tærskel",["Bestemmer, hvor højt en lyd skal være for at tælle som et tik.","Hæv tærsklen, hvis støj eller lyde efter tikket tæller med. Sænk den, hvis tik bliver overset. 40 % passer til de fleste ure."]],
-  win:["Målevindue",["Hvor mange sekunders tik der bruges til at beregne tallene.","Et langt vindue giver et mere stabilt og præcist tal, men reagerer langsommere, når du flytter uret. Standarden er 10 sekunder."]],
+  win:["Målevindue",["Hvor mange sekunders tik, der bruges til at beregne tallene.","Et langt vindue giver et mere stabilt og præcist tal, men reagerer langsommere, når du flytter uret. Standarden er 10 sekunder."]],
   pos:["Stilling",["Tyngdekraften påvirker uroen, så et ur går forskelligt afhængigt af, hvordan det ligger. Urmagere måler derfor i flere stillinger.","Skive op og ned er fladt liggende. Krone op, ned, venstre og højre er uret stående på højkant med kronen i den retning. Lodrette stillinger ligner mest, hvordan uret sidder på armen.",
     "I praksis betyder stillingen om natten mest. Ligger uret den samme vej 8 timer hver nat, trækker den stilling hele døgnets afvigelse i sin retning. Om dagen på armen skifter uret hele tiden stilling, så dér ligger afvigelsen nærmere et gennemsnit af stillingerne."]],
   summary:["Overblik pr. ur",["Bruger den nyeste måling for hver stilling.","Gennemsnit er et groft bud på den daglige afvigelse, når uret bæres. Forskel er afstanden mellem bedste og dårligste stilling. En stor forskel kan betyde, at uret ikke var trukket helt op, eller at det trænger til service."]],
@@ -769,7 +769,7 @@ function loop(ts){
       const c=onsets.filter(t=>t>total/sr-3).length;
       setStatus(c<3?"Lytter. Ingen tydelige tik endnu. Læg uret tættere på mikrofonen, eller sænk tærsklen.":"Samler tik…",false,c<3?"listening":"detecting");
     }else if(res.state==="ok"&&!res.reliable){
-      setStatus(res.span<4?"Samler tik…":`Tikkene er for uregelmæssige til en pålidelig måling (spredning ${fmt(res.sd,1)} ms). Tjek at tikkene går over den stiplede linje, eller læg uret tættere på mikrofonen.`,false,res.span<4?"detecting":"warn");
+      setStatus(res.span<4?"Samler tik…":`Tikkene er for uregelmæssige til en pålidelig måling (spredning ${fmt(res.sd,1)} ms). Tjek, at tikkene går over den stiplede linje, eller læg uret tættere på mikrofonen.`,false,res.span<4?"detecting":"warn");
     }else if(res.state==="nobph"){
       setStatus("Tikkene passer ikke til et kendt slagtal. Vælg slagtal manuelt, eller justér tærsklen.",false,"warn");
     }else{
@@ -795,7 +795,7 @@ async function start(){
   try{
     stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false,channelCount:1}});
   }catch(e){
-    setStatus("Mikrofonen blev ikke tilladt. Giv adgang i browserens indstillinger, og prøv igen.",false,"error");
+    setStatus("Adgang til mikrofonen blev afvist. Giv adgang i browserens indstillinger, og prøv igen.",false,"error");
     try{ctx.close();}catch(_){}ctx=null;return;
   }
   await ctx.resume();
@@ -823,7 +823,7 @@ function stop(){
   try{wakeLock&&wakeLock.release();}catch(_){}
   ctx=null;stream=null;proc=null;wakeLock=null;
   $("startBtn").textContent="Start";$("startBtn").classList.remove("on");
-  setStatus(lastResult?"Stoppet. Sidste måling står stadig på skærmen og kan gemmes.":"Stoppet.",false,"idle");
+  setStatus(lastResult?"Stoppet. Den seneste måling står stadig på skærmen og kan gemmes.":"Stoppet.",false,"idle");
 }
 
 // ---------- saved log ----------
@@ -1469,7 +1469,7 @@ function buildSingleReport(m){
   const shownSpan = fullTrace.length? Math.min(WINDOW_SEC, fullTrace[fullTrace.length-1].t-fullTrace[0].t) : 0;
   const beatCaption = fullTrace.length===0
     ? "Denne måling blev gemt, før appen gemte de enkelte slag."
-    : `Et repræsentativt udsnit på ${fmtPlain(shownSpan,shownSpan<2?1:0)} sekund${shownSpan===1?"":"er"} af målingen. Fyldt prik er tik, åben prik er tak. De to mellemrum er tik-til-tak og tak-til-tik \u2014 forskellen mellem dem er beat error. Toppenes højde er til pynt; lydstyrken er ikke gemt.`;
+    : `Et repræsentativt udsnit på ${fmtPlain(shownSpan,shownSpan<2?1:0)} sekund${shownSpan===1?"":"er"} af målingen. Fyldt prik er tik, åben prik er tak. De to mellemrum er tik-til-tak og tak-til-tik, og forskellen mellem dem er beat error. Toppenes højde er til pynt; lydstyrken er ikke gemt.`;
   const cy1=y; wrapText(beatCaption,"F1",7.5,PAGE_W-2*M).forEach((ln,i)=>{doc.text(page,M,cy1+i*10,7.5,"F1",ln,{color:MUTE}); y=cy1+i*10;});
   y+=22;
   doc.text(page,M,y,9,"F2","AFVIGELSE UNDER MÅLINGEN",{color:MUTE,tracking:0.6});
@@ -1519,7 +1519,7 @@ function buildHistoryReport(watchName, rows){
   for(let pi=0;pi<pageCount;pi++){
     const page=doc.addPage(PAGE_W,PAGE_H);
     frame(doc,page);
-    header(doc,page, pageCount>1?`Historik — side ${pi+1} af ${pageCount}`:"Historik, alle målinger");
+    header(doc,page, pageCount>1?`Historik, side ${pi+1} af ${pageCount}`:"Historik, alle målinger");
     let y=128;
     y=infoBand(doc,page,y,[
       {label:"Ur",value:watchName||"Uden navn"},
@@ -1634,7 +1634,7 @@ function openSave(){
   $("newWatchWrap").hidden=sel.value!=="__new";$("saveWatchNew").value="";
   let pi=0;try{pi=parseInt(localStorage.getItem("urmaaler-pos")||"0",10)||0;}catch(_){}
   $("savePos").selectedIndex=Math.min(Math.max(pi,0),$("savePos").options.length-1);
-  $("saveSnap").textContent=`${signed(saveSnap.rate,1)} s/døgn, beat error ${saveSnap.be==null?"-":fmt(saveSnap.be,1)+" ms"}, ${fmt(saveSnap.bph,0)} slag/time`+(saveSnap.amp!=null?`, amplitude ${saveSnap.amp}°`:"")+". Målingen står stille, mens du gemmer.";
+  $("saveSnap").textContent=`${signed(saveSnap.rate,1)} s/døgn, beat error ${saveSnap.be==null?"-":fmt(saveSnap.be,1)+" ms"}, ${fmt(saveSnap.bph,0)} slag i timen`+(saveSnap.amp!=null?`, amplitude ${saveSnap.amp}°`:"")+". Målingen står stille, mens du gemmer.";
   uiFrozen=true;lastFocus=document.activeElement;
   shade.classList.add("open");$("saveSheet").classList.add("open");$("saveTitle").focus({preventScroll:true});
 }
