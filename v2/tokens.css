@@ -5,13 +5,13 @@
 :root{
   /* ---------- Palet (rå farver) ---------- */
   --p-ink:#1A1A18;
-  --p-paper:#F2EEE4;
-  --p-paper-deep:#EAE5D8;
-  --p-mist:#CBD3C6;        /* salvie-tåge: sektionsflade */
-  --p-sand:#E6DAC2;        /* varm sand: støtte-flade */
-  --p-clay:#C76F52;        /* signal. Aldrig som tekst på lys flade */
-  --p-clay-deep:#A94F34;   /* knap og link på papir, hvid tekst 5,4:1 */
-  --p-clay-soft:#E39A80;   /* terrakotta på blæk, 7,6:1 */
+  --p-paper:#F3F2EE;
+  --p-paper-deep:#EAE8E1;
+  --p-mist:#D3D9CF;        /* salvie-tåge: sektionsflade */
+  --p-sand:#E8E3D6;        /* varm sand */
+  --p-clay:#D9512C;        /* signal: store tal, streger, grafik. Aldrig som lille tekst, 3,6:1 på papir */
+  --p-clay-deep:#B8431F;   /* knap og link på papir, hvid tekst 5,4:1, 4,9:1 på papir */
+  --p-clay-soft:#FF8F6B;   /* signal på blæk, 7,8:1 */
   --p-sage:#8A9A87;
   --p-sage-deep:#566653;
   --p-sage-soft:#B5C2B2;
@@ -31,7 +31,7 @@
   --hair:rgba(26,26,24,.18);       /* skillelinjer */
   --hair-strong:rgba(26,26,24,.42);
   --inv-bg:var(--p-ink);           /* inverteret sektion */
-  --inv-fg:#F2EEE4;
+  --inv-fg:#F3F2EE;
   --inv-fg-2:#C4C0B5;
   --inv-hair:rgba(242,238,228,.18);
   --inv-accent:var(--p-clay-soft);
@@ -44,6 +44,7 @@
 
   /* ---------- Typografi ---------- */
   --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --font-display:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --num:"tnum" 1,"lnum" 1;
 
@@ -117,16 +118,16 @@
     --bg-2:#1D1C19;
     --tint:#222A22;
     --warm:#2B2820;
-    --fg:#F2EEE4;
+    --fg:#F3F2EE;
     --fg-2:#BDB9AE;
-    --accent:#E39A80;
-    --accent-fill:#C76F52;
+    --accent:#FF8F6B;
+    --accent-fill:#FF8F6B;
     --on-accent:#1A1A18;
     --stroke:rgba(242,238,228,.56);
     --hair:rgba(242,238,228,.16);
     --hair-strong:rgba(242,238,228,.42);
     --inv-bg:#0D0D0C;
-    --focus:#E39A80;
+    --focus:#FF8F6B;
     --e-1:none;
     --e-2:0 0 0 1px rgba(242,238,228,.06);
     --e-3:0 24px 48px rgba(0,0,0,.45);
