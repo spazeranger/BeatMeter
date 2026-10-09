@@ -63,6 +63,31 @@
     window.addEventListener('scroll',function(){if(!pq){pq=true;requestAnimationFrame(par)}},{passive:true});
   }
 
+
+  // Layout 1 / 2 på vejledningssiden. Valget huskes. Kortene glider til deres nye plads (FLIP).
+  var lt=document.querySelector('.layout-toggle'),grid=document.querySelector('.cols3[data-layout]');
+  if(lt&&grid){
+    var KEY='beatmeter-layout',btns=Array.prototype.slice.call(lt.querySelectorAll('button'));
+    function setLayout(n,animate){
+      var items=animate&&!reduce?Array.prototype.slice.call(grid.querySelectorAll('.list>a')):[];
+      var before=items.map(function(e){return e.getBoundingClientRect()});
+      grid.setAttribute('data-layout',n);
+      btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-layout')===n?'true':'false')});
+      items.forEach(function(e,i){
+        var a=before[i],b=e.getBoundingClientRect(),dx=a.left-b.left,dy=a.top-b.top;
+        if(!dx&&!dy||!e.animate)return;
+        e.animate([{transform:'translate('+dx+'px,'+dy+'px)',opacity:.5},{transform:'none',opacity:1}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)',delay:Math.min(i,8)*30,fill:'backwards'});
+      });
+    }
+    var saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
+    if(saved==='2')setLayout('2',false);
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var n=b.getAttribute('data-layout');
+      if(grid.getAttribute('data-layout')===n)return;
+      setLayout(n,true);try{localStorage.setItem(KEY,n)}catch(e){}
+    })});
+  }
+
   // Aktivt punkt i en liste af #-links (sektionsbjælken og "I denne guide").
   function spy(links,onChange){
     links=Array.prototype.slice.call(links);

@@ -440,3 +440,38 @@ footer .mark i{font-style:italic;color:var(--signal)}
 .js [data-split] .w>span{display:inline-block;transform:translateY(110%);transition:transform var(--dur-3) var(--ease);transition-delay:calc(var(--i,0)*45ms)}
 .js [data-split].in .w>span{transform:none}
 @media (prefers-reduced-motion:reduce){.js [data-split] .w>span{transform:none}}
+
+
+/* ---------- Farver: ét signal i hele papirsiden, også i logo og tegninger ---------- */
+svg [fill="#C76F52"]{fill:var(--signal)}
+svg [stroke="#C76F52"]{stroke:var(--signal)}
+svg[fill="#C76F52"]{fill:var(--signal)}
+svg[stroke="#C76F52"]{stroke:var(--signal)}
+
+/* ---------- Layout 1 / 2 på vejledningssiden ---------- */
+.layout-toggle{display:flex;align-items:center;gap:var(--s-1);margin-bottom:var(--s-6);font-family:var(--font-mono)}
+.layout-toggle .label{margin-right:var(--s-5)}
+.layout-toggle button{width:2.75rem;height:2.75rem;padding:0;border:var(--hairline) solid transparent;border-radius:50%;background:transparent;color:var(--fg);font:inherit;font-family:var(--font-mono);font-size:.75rem;font-weight:500;cursor:pointer;transition:border-color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),transform var(--dur-1) var(--ease)}
+.layout-toggle button:hover{border-color:var(--hair-strong)}
+.layout-toggle button:active{transform:scale(.94)}
+.layout-toggle button[aria-pressed="true"]{border-color:var(--fg)}
+.layout-toggle button[aria-pressed="true"]:hover{border-color:var(--fg)}
+
+/* Layout 2: redaktionel liste. Gruppenavnet til venstre, vejledningerne som store rækker til højre */
+.cols3[data-layout="2"]{display:flex;flex-direction:column;gap:0;border-top:var(--hairline) solid var(--stroke)}
+.cols3[data-layout="2"]>div{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--s-4) var(--s-6);padding:var(--s-6) 0;border-bottom:var(--hairline) solid var(--stroke)}
+.cols3[data-layout="2"]>div:last-child{display:contents!important}
+.cols3[data-layout="2"]>div:last-child>#gaa-i-dybden{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--s-4) var(--s-6);padding:var(--s-6) 0;border-bottom:var(--hairline) solid var(--stroke)}
+.cols3[data-layout="2"]>div:last-child>.cta{margin:var(--s-6) 0 0}
+.cols3[data-layout="2"] h3{margin:0;padding-top:var(--s-2)}
+.cols3[data-layout="2"] .list{gap:0}
+.cols3[data-layout="2"] .list>a{padding:var(--s-5) 0;border:0;border-top:var(--hairline) solid var(--hair);border-radius:0;background:transparent;box-shadow:none;transform:none}
+.cols3[data-layout="2"] .list>a:first-child{border-top:0;padding-top:0}
+.cols3[data-layout="2"] .list>a:last-child{padding-bottom:0}
+.cols3[data-layout="2"] .list .t{font-size:clamp(1.75rem,1.3rem + 1.8vw,2.75rem);line-height:1.08}
+.cols3[data-layout="2"] .list>a:hover{background:transparent;box-shadow:none;transform:none}
+.cols3[data-layout="2"] .list>a:hover .t{color:var(--accent)}
+.cols3[data-layout="2"] .list .d{max-width:var(--measure);font-size:1rem}
+@media (max-width:760px){
+  .cols3[data-layout="2"]>div,.cols3[data-layout="2"]>div:last-child>#gaa-i-dybden{grid-template-columns:1fr}
+}
