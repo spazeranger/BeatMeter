@@ -7,7 +7,8 @@
   --ink:#F5F3EC;
   --mute:#A7A399;
   --line:rgba(245,243,236,.16);
-  --gilt:#C76F52;          /* tik og primært signal */
+  --gilt:#D9512C;          /* tik og primært signal */
+  --gilt-scope:#C76F52;    /* tærskellinjen i lydniveau-stripen bevarer sin oprindelige farve */
   --tock:#B5C2B2;          /* tak og reference */
   --good:#A3B7A0;
   --warn:#D9A84E;
@@ -19,7 +20,7 @@
   --edge:rgba(245,243,236,.34);     /* 1px omrids på flader */
   --edge-hi:rgba(245,243,236,.6);
   --ink-2:#C4C0B5;
-  --signal-soft:#E39A80;
+  --signal-soft:#FF8F6B;
   box-sizing:border-box;color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:inherit}
@@ -90,7 +91,7 @@ button{font:inherit;border:var(--hairline) solid var(--edge);background:transpar
 button:hover{border-color:var(--edge-hi);background:rgba(245,243,236,.06)}
 button:active{transform:scale(.98)}
 button:disabled{opacity:.35;cursor:not-allowed;transform:none;background:transparent;border-color:var(--edge)}
-#startBtn{background:var(--gilt);border-color:var(--gilt);color:var(--bg);font-weight:600;padding:var(--s-3) var(--s-6);min-height:3.5rem;font-size:1.0625rem;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+#startBtn{background:var(--signal-soft);border-color:var(--signal-soft);color:var(--bg);font-weight:600;padding:var(--s-3) var(--s-6);min-height:3.5rem;font-size:1.0625rem;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 #startBtn:hover{background:var(--ink);border-color:var(--ink)}
 #startBtn.on{background:var(--bg);color:var(--ink);border-color:var(--edge-hi)}
 #startBtn.on:hover{background:var(--dial)}
@@ -143,7 +144,7 @@ details.fold summary{list-style:none;display:flex;align-items:center;gap:var(--s
 details.fold summary::-webkit-details-marker{display:none}
 details.fold summary .ft{font-weight:600;font-size:1rem}
 details.fold summary .tag{flex:0 0 auto}
-details.fold summary .mini{margin-left:auto;font-weight:500;font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--gilt)}
+details.fold summary .mini{margin-left:auto;font-weight:500;font-size:1.1rem;font-variant-numeric:tabular-nums;color:var(--signal-soft)}
 details.fold summary .mini.sm{font-weight:400;font-size:.85rem;color:var(--mute)}
 details.fold summary::after{content:"";width:7px;height:7px;border-right:1.5px solid var(--mute);border-bottom:1.5px solid var(--mute);transform:rotate(45deg);margin:0 4px 4px 8px;transition:transform var(--dur-2) var(--ease)}
 details.fold[open] summary::after{transform:rotate(-135deg);margin-bottom:-4px}
@@ -201,7 +202,7 @@ h3{font-family:var(--font-display);font-weight:400;letter-spacing:-.01em}
 #saveSheet label{min-width:0}
 #saveSheet .btns{display:flex;gap:var(--s-3);margin-top:var(--s-1)}
 #saveSheet .btns button{flex:1;min-height:3rem}
-#saveConfirm{background:var(--gilt);border-color:var(--gilt);color:var(--bg);font-weight:600}
+#saveConfirm{background:var(--signal-soft);border-color:var(--signal-soft);color:var(--bg);font-weight:600}
 #saveConfirm:hover{background:var(--ink);border-color:var(--ink)}
 [hidden]{display:none!important}
 #sheet:not(.open),#saveSheet:not(.open){visibility:hidden;transition:transform var(--dur-2) var(--ease),visibility 0s linear var(--dur-2)}
@@ -248,3 +249,4 @@ button.i::after{content:"";position:absolute;inset:-12px}
 .m .l,.panel h2,th{text-transform:uppercase}
 .brand{border:0;padding:0;min-height:2.75rem}
 .brand:hover{background:transparent;color:var(--signal-soft)}
+select,input[type=text],input[type=number],input[type=datetime-local]{font-family:var(--font-sans);letter-spacing:0}

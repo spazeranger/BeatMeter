@@ -389,16 +389,16 @@ footer .mark i{font-style:italic;color:var(--signal)}
   :root:not(.tool) .btn.primary{color:var(--on-accent)}
   :root:not(.tool) svg[stroke="#1A1A18"],:root:not(.tool) svg [stroke="#1A1A18"]{stroke:var(--fg)}
   :root:not(.tool) svg[fill="#1A1A18"],:root:not(.tool) svg [fill="#1A1A18"]{fill:var(--fg)}
-  :root:not(.tool) svg[stroke="#F5F3EC"],:root:not(.tool) svg [stroke="#F5F3EC"]{stroke:var(--bg)}
-  :root:not(.tool) svg[fill="#F5F3EC"],:root:not(.tool) svg [fill="#F5F3EC"]{fill:var(--bg)}
-  :root:not(.tool) svg[stroke="#5F5C54"],:root:not(.tool) svg [stroke="#5F5C54"]{stroke:var(--fg-2)}
-  :root:not(.tool) svg[fill="#5F5C54"],:root:not(.tool) svg [fill="#5F5C54"]{fill:var(--fg-2)}
+  :root:not(.tool) svg[stroke="#F3F2EE"],:root:not(.tool) svg [stroke="#F3F2EE"]{stroke:var(--bg)}
+  :root:not(.tool) svg[fill="#F3F2EE"],:root:not(.tool) svg [fill="#F3F2EE"]{fill:var(--bg)}
+  :root:not(.tool) svg[stroke="#4F4C45"],:root:not(.tool) svg [stroke="#4F4C45"]{stroke:var(--fg-2)}
+  :root:not(.tool) svg[fill="#4F4C45"],:root:not(.tool) svg [fill="#4F4C45"]{fill:var(--fg-2)}
   :root:not(.tool) svg[stroke="#566653"],:root:not(.tool) svg [stroke="#566653"]{stroke:var(--p-sage-soft)}
   :root:not(.tool) svg[fill="#566653"],:root:not(.tool) svg [fill="#566653"]{fill:var(--p-sage-soft)}
-  :root:not(.tool) svg[stroke="#D6C6A8"],:root:not(.tool) svg [stroke="#D6C6A8"]{stroke:#4A4334}
-  :root:not(.tool) svg[fill="#E6DDCB"],:root:not(.tool) svg [fill="#E6DDCB"],:root:not(.tool) svg[fill="#E9DFC6"],:root:not(.tool) svg [fill="#E9DFC6"]{fill:#2B2923}
-  :root:not(.tool) svg[fill="#EFEBDF"],:root:not(.tool) svg [fill="#EFEBDF"]{fill:var(--bg-2)}
-  :root:not(.tool) svg[stroke="#E6DDCB"],:root:not(.tool) svg [stroke="#E6DDCB"]{stroke:#2B2923}
+  :root:not(.tool) svg[stroke="#CFC8B6"],:root:not(.tool) svg [stroke="#CFC8B6"]{stroke:#4A4334}
+  :root:not(.tool) svg[fill="#E8E3D6"],:root:not(.tool) svg [fill="#E8E3D6"],:root:not(.tool) svg[fill="#E8E3D6"],:root:not(.tool) svg [fill="#E8E3D6"]{fill:#2B2923}
+  :root:not(.tool) svg[fill="#EAE8E1"],:root:not(.tool) svg [fill="#EAE8E1"]{fill:var(--bg-2)}
+  :root:not(.tool) svg[stroke="#E8E3D6"],:root:not(.tool) svg [stroke="#E8E3D6"]{stroke:#2B2923}
   :root:not(.tool) .hero-card .phone{border-color:#3A3A35}
   :root:not(.tool) .support .soon img{filter:none}
 }
@@ -445,10 +445,10 @@ footer .mark i{font-style:italic;color:var(--signal)}
 
 
 /* ---------- Farver: ét signal i hele papirsiden, også i logo og tegninger ---------- */
-svg [fill="#C76F52"]{fill:var(--signal)}
-svg [stroke="#C76F52"]{stroke:var(--signal)}
-svg[fill="#C76F52"]{fill:var(--signal)}
-svg[stroke="#C76F52"]{stroke:var(--signal)}
+svg [fill="#D9512C"]{fill:var(--signal)}
+svg [stroke="#D9512C"]{stroke:var(--signal)}
+svg[fill="#D9512C"]{fill:var(--signal)}
+svg[stroke="#D9512C"]{stroke:var(--signal)}
 
 /* ---------- Layout 1 / 2 på vejledningssiden ---------- */
 .layout-toggle{display:flex;align-items:center;gap:var(--s-1);margin-bottom:var(--s-6);font-family:var(--font-mono)}
