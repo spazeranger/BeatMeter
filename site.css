@@ -386,22 +386,39 @@ footer .mark i{font-style:italic;color:var(--signal)}
 
 /* ---------- Mørkt tema: tegninger i papirsiderne ---------- */
 @media (prefers-color-scheme: dark){
-  :root:not(.tool) .btn.primary{color:var(--on-accent)}
-  :root:not(.tool) svg[stroke="#1A1A18"],:root:not(.tool) svg [stroke="#1A1A18"]{stroke:var(--fg)}
-  :root:not(.tool) svg[fill="#1A1A18"],:root:not(.tool) svg [fill="#1A1A18"]{fill:var(--fg)}
-  :root:not(.tool) svg[stroke="#F3F2EE"],:root:not(.tool) svg [stroke="#F3F2EE"]{stroke:var(--bg)}
-  :root:not(.tool) svg[fill="#F3F2EE"],:root:not(.tool) svg [fill="#F3F2EE"]{fill:var(--bg)}
-  :root:not(.tool) svg[stroke="#4F4C45"],:root:not(.tool) svg [stroke="#4F4C45"]{stroke:var(--fg-2)}
-  :root:not(.tool) svg[fill="#4F4C45"],:root:not(.tool) svg [fill="#4F4C45"]{fill:var(--fg-2)}
-  :root:not(.tool) svg[stroke="#566653"],:root:not(.tool) svg [stroke="#566653"]{stroke:var(--p-sage-soft)}
-  :root:not(.tool) svg[fill="#566653"],:root:not(.tool) svg [fill="#566653"]{fill:var(--p-sage-soft)}
-  :root:not(.tool) svg[stroke="#CFC8B6"],:root:not(.tool) svg [stroke="#CFC8B6"]{stroke:#4A4334}
-  :root:not(.tool) svg[fill="#E8E3D6"],:root:not(.tool) svg [fill="#E8E3D6"],:root:not(.tool) svg[fill="#E8E3D6"],:root:not(.tool) svg [fill="#E8E3D6"]{fill:#2B2923}
-  :root:not(.tool) svg[fill="#EAE8E1"],:root:not(.tool) svg [fill="#EAE8E1"]{fill:var(--bg-2)}
-  :root:not(.tool) svg[stroke="#E8E3D6"],:root:not(.tool) svg [stroke="#E8E3D6"]{stroke:#2B2923}
-  :root:not(.tool) .hero-card .phone{border-color:#3A3A35}
-  :root:not(.tool) .support .soon img{filter:none}
+  :root:not(.tool):not([data-theme="light"]) .btn.primary{color:var(--on-accent)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#1A1A18"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#1A1A18"]{stroke:var(--fg)}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#1A1A18"],:root:not(.tool):not([data-theme="light"]) svg [fill="#1A1A18"]{fill:var(--fg)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#F3F2EE"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#F3F2EE"]{stroke:var(--bg)}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#F3F2EE"],:root:not(.tool):not([data-theme="light"]) svg [fill="#F3F2EE"]{fill:var(--bg)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#4F4C45"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#4F4C45"]{stroke:var(--fg-2)}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#4F4C45"],:root:not(.tool):not([data-theme="light"]) svg [fill="#4F4C45"]{fill:var(--fg-2)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#566653"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#566653"]{stroke:var(--p-sage-soft)}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#566653"],:root:not(.tool):not([data-theme="light"]) svg [fill="#566653"]{fill:var(--p-sage-soft)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#CFC8B6"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#CFC8B6"]{stroke:#4A4334}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#E8E3D6"],:root:not(.tool):not([data-theme="light"]) svg [fill="#E8E3D6"],:root:not(.tool):not([data-theme="light"]) svg[fill="#E8E3D6"],:root:not(.tool):not([data-theme="light"]) svg [fill="#E8E3D6"]{fill:#2B2923}
+  :root:not(.tool):not([data-theme="light"]) svg[fill="#EAE8E1"],:root:not(.tool):not([data-theme="light"]) svg [fill="#EAE8E1"]{fill:var(--bg-2)}
+  :root:not(.tool):not([data-theme="light"]) svg[stroke="#E8E3D6"],:root:not(.tool):not([data-theme="light"]) svg [stroke="#E8E3D6"]{stroke:#2B2923}
+  :root:not(.tool):not([data-theme="light"]) .hero-card .phone{border-color:#3A3A35}
+  :root:not(.tool):not([data-theme="light"]) .support .soon img{filter:none}
 }
+/* Valgt mørkt tema */
+  :root[data-theme="dark"]:not(.tool) .btn.primary{color:var(--on-accent)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#1A1A18"],:root[data-theme="dark"]:not(.tool) svg [stroke="#1A1A18"]{stroke:var(--fg)}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#1A1A18"],:root[data-theme="dark"]:not(.tool) svg [fill="#1A1A18"]{fill:var(--fg)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#F3F2EE"],:root[data-theme="dark"]:not(.tool) svg [stroke="#F3F2EE"]{stroke:var(--bg)}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#F3F2EE"],:root[data-theme="dark"]:not(.tool) svg [fill="#F3F2EE"]{fill:var(--bg)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#4F4C45"],:root[data-theme="dark"]:not(.tool) svg [stroke="#4F4C45"]{stroke:var(--fg-2)}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#4F4C45"],:root[data-theme="dark"]:not(.tool) svg [fill="#4F4C45"]{fill:var(--fg-2)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#566653"],:root[data-theme="dark"]:not(.tool) svg [stroke="#566653"]{stroke:var(--p-sage-soft)}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#566653"],:root[data-theme="dark"]:not(.tool) svg [fill="#566653"]{fill:var(--p-sage-soft)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#CFC8B6"],:root[data-theme="dark"]:not(.tool) svg [stroke="#CFC8B6"]{stroke:#4A4334}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#E8E3D6"],:root[data-theme="dark"]:not(.tool) svg [fill="#E8E3D6"],:root[data-theme="dark"]:not(.tool) svg[fill="#E8E3D6"],:root[data-theme="dark"]:not(.tool) svg [fill="#E8E3D6"]{fill:#2B2923}
+  :root[data-theme="dark"]:not(.tool) svg[fill="#EAE8E1"],:root[data-theme="dark"]:not(.tool) svg [fill="#EAE8E1"]{fill:var(--bg-2)}
+  :root[data-theme="dark"]:not(.tool) svg[stroke="#E8E3D6"],:root[data-theme="dark"]:not(.tool) svg [stroke="#E8E3D6"]{stroke:#2B2923}
+  :root[data-theme="dark"]:not(.tool) .hero-card .phone{border-color:#3A3A35}
+  :root[data-theme="dark"]:not(.tool) .support .soon img{filter:none}
+
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -544,4 +561,21 @@ main[data-layout="2"] .numbers .sec-head p{color:var(--inv-fg-2)}
   main[data-layout="2"] .rail .flow,main[data-layout="2"] .rail .trio,main[data-layout="2"] .rail .rows{grid-column:1;grid-row:auto}
   main[data-layout="2"] .step{grid-template-columns:3.5rem minmax(0,1fr)}
   main[data-layout="2"] .step .n{font-size:3.5rem}
+}
+
+
+/* ---------- Temakontakt: system, lys, mørk ---------- */
+.theme-toggle{display:none;align-items:center;gap:2px;padding:3px;border:var(--hairline) solid var(--hair-strong);border-radius:var(--r-pill);flex:none}
+.js .theme-toggle{display:inline-flex}
+.theme-toggle button{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;padding:0;border:0;border-radius:50%;background:transparent;color:var(--fg-2);cursor:pointer;transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),transform var(--dur-1) var(--ease)}
+.theme-toggle button:hover{background:var(--bg-2);color:var(--fg)}
+.theme-toggle button:active{transform:scale(.92)}
+.theme-toggle button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.theme-toggle svg{width:1.125rem;height:1.125rem;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.bar .theme-toggle{margin-left:var(--s-2)}
+@media (max-width:640px){.js .bar .theme-toggle{display:none}}
+.footer-tools{grid-column:1 / -1;display:flex;align-items:center;gap:var(--s-4);flex-wrap:wrap}
+.footer-tools .theme-toggle button{width:2.75rem;height:2.75rem}
+@media (prefers-reduced-motion:no-preference){
+  html.theme-switching *,html.theme-switching *::before,html.theme-switching *::after{transition:background-color var(--dur-2) var(--ease),color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),fill var(--dur-2) var(--ease),stroke var(--dur-2) var(--ease)!important}
 }
