@@ -113,7 +113,7 @@
 :root{color-scheme:light dark}
 :root.tool{color-scheme:dark}
 @media (prefers-color-scheme: dark){
-  :root:not(.tool){
+  :root:not(.tool):not([data-theme="light"]){
     --bg:#151513;
     --bg-2:#1D1C19;
     --tint:#222A22;
@@ -133,3 +133,25 @@
     --e-3:0 24px 48px rgba(0,0,0,.45);
   }
 }
+/* Valgt mørkt tema (kontakten i toppen og i foden). Samme værdier som ovenfor. */
+:root[data-theme="dark"]:not(.tool){
+    --bg:#151513;
+    --bg-2:#1D1C19;
+    --tint:#222A22;
+    --warm:#2B2820;
+    --fg:#F3F2EE;
+    --fg-2:#BDB9AE;
+    --accent:#FF8F6B;
+    --accent-fill:#FF8F6B;
+    --on-accent:#1A1A18;
+    --stroke:rgba(242,238,228,.56);
+    --hair:rgba(242,238,228,.16);
+    --hair-strong:rgba(242,238,228,.42);
+    --inv-bg:#0D0D0C;
+    --focus:#FF8F6B;
+    --e-1:none;
+    --e-2:0 0 0 1px rgba(242,238,228,.06);
+    --e-3:0 24px 48px rgba(0,0,0,.45);
+  }
+:root[data-theme="light"]:not(.tool){color-scheme:light}
+:root[data-theme="dark"]:not(.tool){color-scheme:dark}
