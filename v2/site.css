@@ -475,3 +475,17 @@ svg[stroke="#C76F52"]{stroke:var(--signal)}
 @media (max-width:760px){
   .cols3[data-layout="2"]>div,.cols3[data-layout="2"]>div:last-child>#gaa-i-dybden{grid-template-columns:1fr}
 }
+
+
+/* ---------- Layout 1 / 2 på forsiden: rækker eller kort ---------- */
+.headtools{display:flex;align-items:center;gap:var(--s-6);flex-wrap:wrap}
+.headtools .layout-toggle{margin:0}
+.headtools .layout-toggle .label{margin-right:var(--s-3)}
+.rows[data-layout="1"] .cat,.rows[data-layout="1"] .d{display:none}
+.rows[data-layout="2"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4);border-top:0}
+.rows[data-layout="2"] a{display:flex;flex-direction:column;justify-content:flex-start;gap:var(--s-4);min-height:17rem;padding:var(--s-6);border:var(--hairline) solid var(--stroke);border-radius:var(--r-lg);background:var(--bg)}
+.rows[data-layout="2"] a:hover{background:var(--tint);padding:var(--s-6)}
+.rows[data-layout="2"] .cat{margin:0}
+.rows[data-layout="2"] .t{font-size:clamp(1.75rem,1.4rem + 1.4vw,2.5rem);align-items:flex-start;min-height:2.2em;margin-top:var(--s-4)}
+.rows[data-layout="2"] .d{margin-top:0}
+@media (max-width:760px){.rows[data-layout="2"]{grid-template-columns:1fr}.rows[data-layout="2"] .t{min-height:0;margin-top:0}.rows[data-layout="2"] a{min-height:0;padding:var(--s-5)}.rows[data-layout="2"] a:hover{padding:var(--s-5)}}

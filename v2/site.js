@@ -65,11 +65,11 @@
 
 
   // Layout 1 / 2 på vejledningssiden. Valget huskes. Kortene glider til deres nye plads (FLIP).
-  var lt=document.querySelector('.layout-toggle'),grid=document.querySelector('.cols3[data-layout]');
+  var lt=document.querySelector('.layout-toggle'),grid=document.querySelector('.cols3[data-layout],.rows[data-layout]');
   if(lt&&grid){
     var KEY='beatmeter-layout',btns=Array.prototype.slice.call(lt.querySelectorAll('button'));
     function setLayout(n,animate){
-      var items=animate&&!reduce?Array.prototype.slice.call(grid.querySelectorAll('.list>a')):[];
+      var items=animate&&!reduce?Array.prototype.slice.call(grid.querySelectorAll('.list>a,.rows>a')):[];
       var before=items.map(function(e){return e.getBoundingClientRect()});
       grid.setAttribute('data-layout',n);
       btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-layout')===n?'true':'false')});
