@@ -116,7 +116,7 @@ canvas{width:100%;display:block;background:var(--tape);border:1px solid var(--li
 #tickwave{height:150px}
 .viewbar{display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-4)}
 .seg{display:flex;flex:1;min-width:0;border:var(--hairline) solid var(--edge);border-radius:var(--r-pill);padding:3px;gap:2px}
-.seg button{flex:1 1 auto;min-width:0;border:0;padding:var(--s-2) 2px;border-radius:var(--r-pill);font-size:clamp(.7rem,3.2vw,.85rem);color:var(--mute);min-height:2.5rem}
+.seg button{flex:1 1 auto;min-width:0;border:0;padding:var(--s-2) 2px;border-radius:var(--r-pill);font-size:clamp(.7rem,3.2vw,.85rem);color:var(--mute);min-height:2.75rem}
 .seg button:hover{color:var(--ink);background:rgba(245,243,236,.06)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:600}
 .legend{display:flex;gap:var(--s-4);font-size:.78rem;color:var(--mute);margin:var(--s-2) 0 var(--s-4);flex-wrap:wrap;align-items:center}
@@ -250,3 +250,14 @@ button.i::after{content:"";position:absolute;inset:-12px}
 .brand{border:0;padding:0;min-height:2.75rem}
 .brand:hover{background:transparent;color:var(--signal-soft)}
 select,input[type=text],input[type=number],input[type=datetime-local]{font-family:var(--font-sans);letter-spacing:0}
+
+/* iOS zoomer ind på siden, når et felt under 16px får fokus. Kun på iOS sættes felterne til 16px. */
+@supports (-webkit-touch-callout:none){
+  select,input[type=text],input[type=number],input[type=datetime-local]{font-size:16px!important}
+}
+
+/* Smalle skærme: de to vælgere deler rækken, og Nulstil får en række for sig, så "Automatisk" ikke afkortes. */
+@media (max-width:460px){
+  .quick{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-3) var(--s-2);align-items:end}
+  .quick #resetBtn{grid-column:1 / -1}
+}
