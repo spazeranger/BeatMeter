@@ -68,7 +68,7 @@
   var lts=document.querySelectorAll('.layout-toggle'),grid=document.querySelector('.cols3[data-layout],main[data-layout]');
   if(lts.length&&grid){
     var KEY='beatmeter-layout',btns=Array.prototype.slice.call(document.querySelectorAll('.layout-toggle button'));
-    var MOVE='.list>a,.rows>a,.hero-top,.hero h1,.hero .lead,.hero .ctas,.hero .fine,.hero-shot,.strip .it,.flow li,.steps .step,.trio .mod,.rail .sec-head,.rail .headrow,.how .intro,.numbers';
+    var MOVE='.list>a,.rows>a,.hero-top,.hero h1,.hero .lead,.hero .ctas,.hero .fine,.hero-shot,.trust,.flow li,.steps .step,.trio .mod,.rail .sec-head,.rail .headrow,.how .intro,.numbers';
     function setLayout(n,animate){
       var items=animate&&!reduce?Array.prototype.slice.call(document.querySelectorAll(MOVE)):[];
       var before=items.map(function(e){return e.getBoundingClientRect()});
