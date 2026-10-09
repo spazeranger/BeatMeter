@@ -29,6 +29,40 @@
     }
   }
 
+
+  // Overskrifter: del i ord, så hvert ord kan glide op bag en maske.
+  document.querySelectorAll('[data-split]').forEach(function(h){
+    var n=0;
+    (function walk(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(c){
+        if(c.nodeType===3){
+          var frag=document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(function(t){
+            if(!t)return;
+            if(/^\s+$/.test(t)){frag.appendChild(document.createTextNode(' '));return}
+            var w=document.createElement('span');w.className='w';
+            var i=document.createElement('span');i.textContent=t;i.style.setProperty('--i',n++);
+            w.appendChild(i);frag.appendChild(w);
+          });
+          node.replaceChild(frag,c);
+        }else if(c.nodeType===1)walk(c);
+      });
+    })(h);
+    if(reduce||!hasIO){h.classList.add('in')}
+    else{
+      var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');so.unobserve(e.target)}})},{threshold:.2});
+      so.observe(h);
+    }
+  });
+
+  // Let parallax: telefonen i forsiden synker langsomt ned i sin ramme, når man ruller.
+  var ph=document.querySelector('.hero-card .phone');
+  if(ph&&!reduce){
+    var pq=false;
+    function par(){pq=false;ph.style.setProperty('--py',(innerWidth>900?Math.min(window.scrollY,700)*.09:0).toFixed(1)+'px')}
+    window.addEventListener('scroll',function(){if(!pq){pq=true;requestAnimationFrame(par)}},{passive:true});
+  }
+
   // Aktivt punkt i en liste af #-links (sektionsbjælken og "I denne guide").
   function spy(links,onChange){
     links=Array.prototype.slice.call(links);

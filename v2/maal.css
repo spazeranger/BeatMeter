@@ -242,3 +242,9 @@ button.i::after{content:"";position:absolute;inset:-12px}
 #bar.compact .barrow{margin-top:var(--s-2)}
 #bar.compact .readout .m{padding-top:var(--s-2);padding-bottom:var(--s-2)}
 #bar.compact .top{display:none}
+
+/* Retning 2: mono-mærkater og ren topbjælke */
+.m .l,.panel h2,th,.tag,.legend,.thrrow,.sub,label{font-family:var(--font-mono);letter-spacing:.03em}
+.m .l,.panel h2,th{text-transform:uppercase}
+.brand{border:0;padding:0;min-height:2.75rem}
+.brand:hover{background:transparent;color:var(--signal-soft)}

@@ -91,7 +91,7 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 .ctas{display:flex;gap:var(--s-5);flex-wrap:wrap;align-items:center}
 .hero-shot{margin:0;position:relative}
 .hero-card{position:relative;background:var(--tint);border:var(--hairline) solid var(--stroke);border-radius:var(--r-xl);padding:clamp(var(--s-5),4vw,var(--s-7)) clamp(var(--s-5),4vw,var(--s-7)) 0;overflow:hidden;display:flex;justify-content:center}
-.hero-card .phone{width:min(20rem,100%);border:.375rem solid var(--p-ink);border-bottom:0;border-radius:var(--r-lg) var(--r-lg) 0 0;overflow:hidden;background:var(--p-ink);box-shadow:var(--e-3);transform:translateY(0);transition:transform var(--dur-3) var(--ease)}
+.hero-card .phone{width:min(20rem,100%);border:.375rem solid var(--p-ink);border-bottom:0;border-radius:var(--r-lg) var(--r-lg) 0 0;overflow:hidden;background:var(--p-ink);box-shadow:var(--e-3);transform:translateY(var(--py,0px));will-change:transform}
 .hero-card .phone img{display:block;width:100%;height:auto}
 .hero-shot figcaption{display:flex;align-items:center;gap:var(--s-2);margin-top:var(--s-4);font-size:var(--fs-small);color:var(--fg-2)}
 .hero-shot figcaption::before{content:"";width:var(--s-5);height:1px;background:var(--hair-strong)}
@@ -185,13 +185,20 @@ html:has(.subnav){scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--h
 .rows .d{display:block;margin-top:var(--s-2);color:var(--fg-2);max-width:var(--measure)}
 
 /* ---------- Støtte ---------- */
-.support{display:flex;justify-content:space-between;align-items:center;gap:var(--s-6) var(--s-8);flex-wrap:wrap;padding:clamp(var(--s-6),5vw,var(--s-8));background:var(--warm);border:var(--hairline) solid var(--stroke);border-radius:var(--r-xl)}
-.support .st{font-family:var(--font-display);font-size:var(--fs-h2);line-height:var(--lh-head);letter-spacing:-.015em}
-.support p{color:var(--fg-2);margin-top:var(--s-4);max-width:32rem}
+.support{display:grid;gap:var(--s-5);padding:clamp(var(--s-6),5vw,var(--s-8));background:var(--inv-bg);color:var(--inv-fg);border-radius:var(--r-xl)}
+.support .label{color:var(--inv-fg-2)}
+.support .st{font-family:var(--font-display);font-size:var(--fs-h2);line-height:var(--lh-head);letter-spacing:-.015em;color:var(--inv-fg)}
+.support .row{display:flex;justify-content:space-between;align-items:center;gap:var(--s-5) var(--s-8);flex-wrap:wrap;padding:var(--s-5) 0;border-top:var(--hairline) solid var(--inv-hair);border-bottom:var(--hairline) solid var(--inv-hair)}
+.support p{color:var(--inv-fg-2);max-width:32rem}
 .support .soon{display:inline-flex;align-items:center;gap:var(--s-4);flex-wrap:wrap}
 .support .soon a{display:inline-flex;align-items:center;min-height:2.75rem;border-radius:var(--r-pill);transition:transform var(--dur-2) var(--ease)}
 .support .soon a:hover{transform:translateY(-2px)}
 .support .soon img{display:block;height:2.25rem;width:auto;border:0}
+.support .giant{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-4);font-family:var(--font-mono);font-weight:400;text-transform:uppercase;font-size:clamp(1.5rem,.4rem + 5.6vw,5.5rem);line-height:1.05;letter-spacing:-.03em;color:var(--inv-accent);text-decoration:none;transition:color var(--dur-2) var(--ease)}
+.support .giant span{display:inline-block;transition:transform var(--dur-2) var(--ease)}
+.support .giant:hover{color:var(--inv-fg)}
+.support .giant:hover span{transform:translate(.1em,-.1em)}
+.support :focus-visible{outline-color:var(--inv-accent)}
 
 /* ---------- Fod ---------- */
 footer{margin-top:var(--section);padding:var(--s-8) 0 0;color:var(--fg-2);font-size:var(--fs-small);overflow:hidden}
@@ -235,7 +242,7 @@ footer .mark i{font-style:italic;color:var(--signal)}
 .cta{background:var(--inv-bg);color:var(--inv-fg);border-radius:var(--r-lg);padding:var(--s-6);display:flex;justify-content:space-between;align-items:center;gap:var(--s-5);flex-wrap:wrap;margin-top:var(--s-4)}
 .cta .ct{font-family:var(--font-display);font-size:var(--fs-h3);line-height:1.1;color:var(--inv-fg)}
 .cta p{color:var(--inv-fg-2);font-size:1rem;line-height:1.55;margin-top:var(--s-2)}
-.cta .btn.primary{background:var(--p-clay);border-color:var(--p-clay);color:var(--p-ink)}
+.cta .btn.primary{background:var(--p-clay-soft);border-color:var(--p-clay-soft);color:var(--p-ink)}
 .cta .btn.primary:hover{background:var(--inv-fg);border-color:var(--inv-fg);color:var(--p-ink)}
 .cta :focus-visible{outline-color:var(--inv-accent)}
 .list{display:flex;flex-direction:column;gap:var(--s-3)}
@@ -280,7 +287,7 @@ footer .mark i{font-style:italic;color:var(--signal)}
 .lab .sub{color:var(--inv-fg-2);margin-top:var(--s-2)}
 .lab .big{font-size:5rem;font-weight:200;line-height:.9;letter-spacing:-.05em;min-width:2.6ch;display:inline-block;font-variant-numeric:tabular-nums lining-nums}
 .lab .unitl{color:var(--inv-fg-2)}
-.lab input[type=range]{width:100%;accent-color:var(--p-clay);height:1.75rem;margin:0}
+.lab input[type=range]{width:100%;accent-color:var(--p-clay-soft);height:1.75rem;margin:0}
 .lab .head{display:flex;align-items:baseline;gap:var(--s-3);flex-wrap:wrap}
 .lab .head .pill{margin-left:auto;white-space:nowrap}
 .lab .zone{position:relative;height:2px;background:var(--inv-hair)}
@@ -290,7 +297,7 @@ footer .mark i{font-style:italic;color:var(--signal)}
 .lab .quip{min-height:2.8em;display:flex;align-items:center;font-weight:600;font-size:1.1rem}
 .lab .chips button{font:inherit;font-size:var(--fs-small);min-height:2.75rem;padding:0 var(--s-4);border-radius:var(--r-pill);border:var(--hairline) solid var(--inv-hair);background:transparent;color:var(--inv-fg);cursor:pointer;transition:background var(--dur-1),border-color var(--dur-1),color var(--dur-1)}
 .lab .chips button:hover{border-color:var(--inv-fg-2)}
-.lab .chips button[aria-pressed="true"]{background:var(--p-clay);color:var(--p-ink);border-color:var(--p-clay);font-weight:600}
+.lab .chips button[aria-pressed="true"]{background:var(--p-clay-soft);color:var(--p-ink);border-color:var(--p-clay-soft);font-weight:600}
 .lab :focus-visible{outline-color:var(--inv-accent)}
 .lab .res{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--hairline) solid var(--inv-hair)}
 .lab .res>div{padding:var(--s-4) var(--s-4) 0 0}
@@ -403,3 +410,33 @@ footer .mark i{font-style:italic;color:var(--signal)}
 .prose .gnav+h1{margin-top:var(--s-4)}
 .aside .list .t{font-size:1.25rem!important}
 .xp-grid+p{margin-top:var(--s-4)}
+
+
+/* ---------- Retning 2: ro, mono-mærkater, én varm accent ---------- */
+.label,.eyebrow,.rows .cat,.gnav-ch,.gnav-h,.aside .ah,.cols3 h3,.gear-list .cat,.xp summary .cat,.fig .unit,footer .fh,.flow .n,.hero-shot figcaption,.crumb,.lab .eyebrow,.src,.subnav a{font-family:var(--font-mono);font-weight:400;letter-spacing:.04em}
+.label,.eyebrow,.rows .cat,.gnav-ch,.gnav-h,.aside .ah,.cols3 h3,.gear-list .cat,.xp summary .cat,.fig .unit,footer .fh,.flow .n{font-size:.75rem;text-transform:uppercase}
+.hero .eyebrow{text-transform:none;font-size:var(--fs-small)}
+
+/* Topbjælke: ren tekst, understreget navigation, kun knappen er en pille */
+.logo{border:0;background:transparent;padding:0;min-height:2.75rem;font-weight:600}
+.logo:hover{background:transparent;color:var(--accent)}
+.nav a{border:0;border-radius:0;background:transparent;padding:0 var(--s-3);min-height:2.75rem;font-size:1rem;font-weight:500;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.32em;text-decoration-color:var(--fg);transition:color var(--dur-2) var(--ease),text-decoration-color var(--dur-2) var(--ease)}
+.nav a:hover{background:transparent;color:var(--accent);text-decoration-color:var(--signal)}
+.nav a[aria-current="page"]{background:transparent;color:var(--fg);text-decoration-color:var(--signal);text-decoration-thickness:3px}
+.bar{gap:var(--s-3)}
+.subnav a{border:0;border-radius:0;background:transparent;min-height:2.25rem;padding:0 var(--s-3);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fg-2)}
+.subnav a:hover{background:transparent;color:var(--fg)}
+.subnav a[aria-current="true"]{background:transparent;color:var(--fg);box-shadow:inset 0 -2px 0 var(--signal)}
+
+/* Vejledninger: de andre rækker toner ned, den valgte får signalfarve */
+@media (hover:hover){
+  .rows:hover a:not(:hover){opacity:.38}
+  .rows a{transition:padding var(--dur-2) var(--ease),background var(--dur-2) var(--ease),opacity var(--dur-2) var(--ease)}
+  .rows a:hover .t{color:var(--accent)}
+}
+
+/* Overskrifter: ord glider op bag en maske, ét ad gangen (Zajno: forskydning og maskering) */
+.js [data-split] .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.1em .06em .14em;margin:-.1em -.06em -.14em}
+.js [data-split] .w>span{display:inline-block;transform:translateY(110%);transition:transform var(--dur-3) var(--ease);transition-delay:calc(var(--i,0)*45ms)}
+.js [data-split].in .w>span{transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-split] .w>span{transform:none}}
