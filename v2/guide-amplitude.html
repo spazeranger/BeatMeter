@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://spazeranger.github.io/BeatMeter/v2/guide-amplitude.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:site_name" content="BeatMeter">
+<meta property="og:title" content="Løftevinkel og amplitude | BeatMeter">
+<meta property="og:description" content="Hvad amplitude fortæller om urets tilstand, hvordan den måles, og hvorfor løftevinklen skal være rigtig.">
+<meta property="og:url" content="https://spazeranger.github.io/BeatMeter/v2/guide-amplitude.html">
+<meta name="description" content="Hvad amplitude fortæller om urets tilstand, hvordan den måles, og hvorfor løftevinklen skal være rigtig.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2EEE4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151513" media="(prefers-color-scheme: dark)">
+<title>Løftevinkel og amplitude | BeatMeter</title>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Spring til indhold</a>
+<header class="top"><div class="bar">
+  <a class="logo" href="index.html" aria-label="BeatMeter, til forsiden"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="44.3" fill="none" stroke="currentColor" stroke-width="4.12"/><g fill="currentColor"><rect x="48.26" y="0.6" width="3.48" height="4.6"/><rect x="48.26" y="94.8" width="3.48" height="4.6"/><rect x="7.2" y="48.96" width="7.6" height="3.48"/><rect x="85.2" y="48.96" width="7.6" height="3.48"/></g><g fill="none" stroke="#8A9A87" stroke-width="4.12" stroke-linecap="round" stroke-linejoin="round"><path d="M17.61 51.14C18.32 51.14 20.88 50.85 21.87 51.14C22.87 51.42 23.01 52.18 23.58 52.84C24.15 53.5 24.86 54.81 25.28 55.11C25.71 55.42 25.71 55.4 26.14 54.69C26.56 53.98 27.27 52.18 27.84 50.85C28.41 49.53 29.07 47.7 29.55 46.73C30.02 45.76 30.3 45 30.68 45.03C31.06 45.05 31.44 46 31.82 46.88C32.2 47.75 32.48 48.82 32.95 50.28C33.43 51.75 34.09 54.19 34.66 55.68C35.23 57.17 35.98 58.62 36.36 59.23C36.74 59.85 36.65 59.68 36.93 59.38C37.22 59.07 37.59 58.33 38.07 57.39C38.54 56.44 39.2 54.64 39.77 53.69C40.34 52.75 40.91 52.08 41.48 51.7C42.05 51.33 42.57 51.49 43.18 51.42C43.8 51.35 44.22 51.33 45.17 51.28C46.12 51.23 48.25 51.16 48.86 51.14" transform="translate(0 0.4)"/><path d="M17.61 51.14C18.32 51.14 20.88 50.85 21.87 51.14C22.87 51.42 23.01 52.18 23.58 52.84C24.15 53.5 24.86 54.81 25.28 55.11C25.71 55.42 25.71 55.4 26.14 54.69C26.56 53.98 27.27 52.18 27.84 50.85C28.41 49.53 29.07 47.7 29.55 46.73C30.02 45.76 30.3 45 30.68 45.03C31.06 45.05 31.44 46 31.82 46.88C32.2 47.75 32.48 48.82 32.95 50.28C33.43 51.75 34.09 54.19 34.66 55.68C35.23 57.17 35.98 58.62 36.36 59.23C36.74 59.85 36.65 59.68 36.93 59.38C37.22 59.07 37.59 58.33 38.07 57.39C38.54 56.44 39.2 54.64 39.77 53.69C40.34 52.75 40.91 52.08 41.48 51.7C42.05 51.33 42.57 51.49 43.18 51.42C43.8 51.35 44.22 51.33 45.17 51.28C46.12 51.23 48.25 51.16 48.86 51.14" transform="translate(100 0.4) scale(-1 1)"/></g><rect x="49.2" y="36" width="1.6" height="9" fill="#8A9A87"/><path d="M48.6 9.6Q50 8.6 51.4 9.6L51.7 14C51.9 21 51.6 30 51 37H49C48.4 30 48.1 21 48.3 14Z" fill="#C76F52"/><path d="M48.4 55H51.6L51.3 75.6Q50 77 48.7 75.6Z" fill="currentColor"/><rect x="48.95" y="76" width="2.1" height="12.8" rx="1" fill="#8A9A87"/><circle cx="50" cy="50.7" r="6.1" fill="currentColor"/></svg><span>BeatMeter</span></a>
+  <span class="grow"></span>
+  <nav class="nav" aria-label="Hovedmenu"><a class="hide-s" href="privatliv.html">Privatliv</a><a href="guides.html" aria-current="page">Vejledninger</a></nav>
+  <a class="btn primary small" href="maal.html">Mål dit ur <span class="arrow" aria-hidden="true">→</span></a>
+</div></header>
+<main id="main"><div class="wrap article">
+<article class="prose">
+  <nav class="crumb" aria-label="Brødkrumme"><a href="guides.html">Vejledninger</a> / Gå i dybden</nav>
+  <details class="gnav"><summary><span class="gnav-cur"><span class="gnav-ch">Gå i dybden</span>Løftevinkel og amplitude</span></summary><div class="gnav-body"><div class="gnav-grp"><div class="gnav-h">Kom i gang</div><a href="guide-maal.html">Sådan måler du dit ur</a><a href="guide-frekvens.html">Hvilken frekvens slår mit ur med?</a></div><div class="gnav-grp"><div class="gnav-h">Forstå målingen</div><a href="guide-afvigelse.html">Afvigelse og beat error forklaret</a><a href="guide-diagrammer.html">Sådan læser du diagrammerne</a><a href="guide-stillinger.html">Hvorfor går mit ur anderledes i forskellige stillinger?</a><a href="guide-telefon.html">Hvor præcis er en telefon som timegrapher?</a></div><div class="gnav-grp"><div class="gnav-h">Gå i dybden</div><a href="guide-amplitude.html" class="on" aria-current="page">Løftevinkel og amplitude</a></div><a class="gnav-all" href="guides.html">Alle vejledninger</a></div></details>
+  <h1>Løftevinkel og amplitude</h1>
+  <p class="lead">Amplitude er det tal, urmagere ser efter, når de vil vurdere et værks tilstand. Det er også det sværeste at måle med en telefon.</p>
+<h2 id="amplitude">Hvad er amplitude?</h2>
+<p>Amplitude er, hvor langt uroen svinger, målt i grader. Et sundt og fuldt optrukket ur svinger langt. Falder amplituden, kan det skyldes, at uret ikke er trukket helt op, at det står på højkant, eller at værket trænger til rens og smøring.</p>
+<p>Hvor stor amplituden bør være, afhænger af uret. Appens vurdering bruger som tommelfingerregel, at over 250 grader er sundt, og at under 200 grader er lavt.</p>
+<figure class="fig wide"><svg viewBox="0 0 360 106" role="img" aria-label="Skala for amplitude fra 0 til 360 grader. Under 200 grader er lavt, over 250 grader er sundt." fill="none" stroke-linecap="round" focusable="false"><path d="M20 50H197.8" stroke="#A7A399" stroke-width="8"/><path d="M197.8 50H242.2" stroke="#D6C6A8" stroke-width="8"/><path d="M242.2 50H340" stroke="#8A9A87" stroke-width="8"/><path d="M20.0 34V66" stroke="#1A1A18" stroke-width="1"/><text x="20.0" y="26" text-anchor="middle" font-size="12" font-weight="500" fill="#1A1A18">0°</text><path d="M197.8 34V66" stroke="#1A1A18" stroke-width="1"/><text x="197.8" y="26" text-anchor="middle" font-size="12" font-weight="500" fill="#1A1A18">200°</text><path d="M242.2 34V66" stroke="#1A1A18" stroke-width="1"/><text x="242.2" y="26" text-anchor="middle" font-size="12" font-weight="500" fill="#1A1A18">250°</text><path d="M340.0 34V66" stroke="#1A1A18" stroke-width="1"/><text x="340.0" y="26" text-anchor="middle" font-size="12" font-weight="500" fill="#1A1A18">360°</text><text x="108.9" y="92" text-anchor="middle" font-size="12" font-weight="400" fill="#5F5C54">Lavt: under 200°</text><text x="291.1" y="92" text-anchor="middle" font-size="12" font-weight="400" fill="#5F5C54">Sundt: over 250°</text></svg><figcaption><span class="note">Appens tommelfingerregel. Hvor stor amplituden bør være, afhænger af uret.</span></figcaption></figure>
+<h2 id="maaling">Sådan måles den</h2>
+<p>Hvert tik består af flere små lyde med få millisekunders mellemrum: ankeret låses op, uroen får et skub, og ankeret lander igen. Tiden fra den første til den sidste af dem afhænger af, hvor hurtigt uroen passerer ankeret, og dermed af, hvor langt den svinger.</p>
+<p>Appen lægger de seneste tik oven på hinanden, finder de to lyde og regner tiden om til grader ved hjælp af løftevinklen.</p>
+<h2 id="loeftevinkel">Løftevinklen</h2>
+<p>Løftevinklen er den vinkel, uroen drejer, mens den er i kontakt med ankeret. Den er fast for hver kaliber og står i værkets tekniske specifikationer. Er den forkert, bliver amplituden forkert, mens afvigelse og beat error ikke påvirkes.</p>
+<p>Kender du kaliberen, kan du slå løftevinklen op i eksempelvis <a href="https://watchguy.co.uk/cgi-bin/lift_angles" target="_blank" rel="noopener noreferrer">WatchGuys liste over løftevinkler</a>, som dækker mange mærker og kalibre, eller hos <a href="https://calibercorner.com/lift-angle/" target="_blank" rel="noopener noreferrer">Caliber Corner</a>, hvor værdien dog ikke altid er bekræftet. Kan du ikke finde den, er 52 grader det almindelige udgangspunkt.</p>
+<h2 id="hvorfor">Hvorfor virker det ikke på alle ure?</h2>
+<p>Gennem luften og en telefonmikrofon flyder de små lyde i tikket ofte sammen. I vores egne forsøg er det lykkedes med ældre ure med manuelt optræk, men ikke pålideligt med moderne automatiske ure. Derfor er amplitude markeret som eksperimentel i appen, og derfor viser appen intet tal, hvis målingen er ustabil.</p>
+<h2 id="tjek">Sådan tjekker du, om tallet er troværdigt</h2>
+<p>Amplituden bør være højest med skiven op og falde, når uret står på højkant. Den bør også falde, når uret har gået et døgn uden at blive trukket op. Følger dine målinger det mønster, er det et godt tegn. Vil du være sikker, skal du sammenligne med en rigtig timegrapher.</p>
+
+  <div class="cta"><div><div class="ct">Prøv det på et ældre ur</div><p>Fold Amplitude-afsnittet ud i appen, og indtast urets løftevinkel.</p></div><a class="btn primary" href="maal.html">Start måling</a></div>
+</article>
+<aside class="aside">
+  <div class="box"><span class="ah">I denne guide</span><a href="#amplitude">Amplitude</a><a href="#maaling">Sådan måles den</a><a href="#loeftevinkel">Løftevinklen</a><a href="#hvorfor">Begrænsninger</a><a href="#tjek">Troværdigt?</a></div>
+  <div><span class="ah">Læs også</span><div class="list"><a href="guide-telefon.html"><div class="t" style="font-size:1.05rem">Hvor præcis er en telefon som timegrapher?</div></a><a href="guide-stillinger.html"><div class="t" style="font-size:1.05rem">Hvorfor går mit ur anderledes i forskellige stillinger?</div></a><a href="guide-diagrammer.html"><div class="t" style="font-size:1.05rem">Sådan læser du diagrammerne</div></a></div></div>
+</aside>
+</div></main>
+<footer><div class="wrap">
+  <div>
+    <a class="logo" href="index.html" aria-label="BeatMeter, til forsiden"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="44.3" fill="none" stroke="currentColor" stroke-width="4.12"/><g fill="currentColor"><rect x="48.26" y="0.6" width="3.48" height="4.6"/><rect x="48.26" y="94.8" width="3.48" height="4.6"/><rect x="7.2" y="48.96" width="7.6" height="3.48"/><rect x="85.2" y="48.96" width="7.6" height="3.48"/></g><g fill="none" stroke="#8A9A87" stroke-width="4.12" stroke-linecap="round" stroke-linejoin="round"><path d="M17.61 51.14C18.32 51.14 20.88 50.85 21.87 51.14C22.87 51.42 23.01 52.18 23.58 52.84C24.15 53.5 24.86 54.81 25.28 55.11C25.71 55.42 25.71 55.4 26.14 54.69C26.56 53.98 27.27 52.18 27.84 50.85C28.41 49.53 29.07 47.7 29.55 46.73C30.02 45.76 30.3 45 30.68 45.03C31.06 45.05 31.44 46 31.82 46.88C32.2 47.75 32.48 48.82 32.95 50.28C33.43 51.75 34.09 54.19 34.66 55.68C35.23 57.17 35.98 58.62 36.36 59.23C36.74 59.85 36.65 59.68 36.93 59.38C37.22 59.07 37.59 58.33 38.07 57.39C38.54 56.44 39.2 54.64 39.77 53.69C40.34 52.75 40.91 52.08 41.48 51.7C42.05 51.33 42.57 51.49 43.18 51.42C43.8 51.35 44.22 51.33 45.17 51.28C46.12 51.23 48.25 51.16 48.86 51.14" transform="translate(0 0.4)"/><path d="M17.61 51.14C18.32 51.14 20.88 50.85 21.87 51.14C22.87 51.42 23.01 52.18 23.58 52.84C24.15 53.5 24.86 54.81 25.28 55.11C25.71 55.42 25.71 55.4 26.14 54.69C26.56 53.98 27.27 52.18 27.84 50.85C28.41 49.53 29.07 47.7 29.55 46.73C30.02 45.76 30.3 45 30.68 45.03C31.06 45.05 31.44 46 31.82 46.88C32.2 47.75 32.48 48.82 32.95 50.28C33.43 51.75 34.09 54.19 34.66 55.68C35.23 57.17 35.98 58.62 36.36 59.23C36.74 59.85 36.65 59.68 36.93 59.38C37.22 59.07 37.59 58.33 38.07 57.39C38.54 56.44 39.2 54.64 39.77 53.69C40.34 52.75 40.91 52.08 41.48 51.7C42.05 51.33 42.57 51.49 43.18 51.42C43.8 51.35 44.22 51.33 45.17 51.28C46.12 51.23 48.25 51.16 48.86 51.14" transform="translate(100 0.4) scale(-1 1)"/></g><rect x="49.2" y="36" width="1.6" height="9" fill="#8A9A87"/><path d="M48.6 9.6Q50 8.6 51.4 9.6L51.7 14C51.9 21 51.6 30 51 37H49C48.4 30 48.1 21 48.3 14Z" fill="#C76F52"/><path d="M48.4 55H51.6L51.3 75.6Q50 77 48.7 75.6Z" fill="currentColor"/><rect x="48.95" y="76" width="2.1" height="12.8" rx="1" fill="#8A9A87"/><circle cx="50" cy="50.7" r="6.1" fill="currentColor"/></svg><span>BeatMeter</span></a>
+    <p>BeatMeter er et hobbyværktøj til at måle mekaniske ure med telefonens mikrofon. Det er ikke et kalibreret måleinstrument og erstatter ikke en urmager.</p>
+  </div>
+  <div><div class="fh">Måling</div><ul><li><a href="maal.html">Mål dit ur</a></li><li><a href="guide-maal.html">Sådan måler du</a></li><li><a href="guide-afvigelse.html">Afvigelse og beat error</a></li></ul></div>
+  <div><div class="fh">Om</div><ul><li><a href="guides.html">Alle vejledninger</a></li><li><a href="privatliv.html">Privatliv og cookies</a></li><li>Testversion</li></ul></div>
+</div><div class="mark" aria-hidden="true">Beat<i>Meter</i></div></footer>
+<script src="site.js" defer></script>
+<script src="jump.js" defer></script>
+</body>
+</html>
