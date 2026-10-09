@@ -1,0 +1,134 @@
+/* BeatMeter v2, designtokens. Alt i site.css og maal.css bygges af disse variabler.
+   Retning: "Hårlinje". Varmt papir, blæk, én terrakotta-streg. Alle flader er omrids i 1px,
+   store runde hjørner, ingen tunge skygger. Skandinavisk ro med urmagerens præcision. */
+
+:root{
+  /* ---------- Palet (rå farver) ---------- */
+  --p-ink:#1A1A18;
+  --p-paper:#F2EEE4;
+  --p-paper-deep:#EAE5D8;
+  --p-mist:#CBD3C6;        /* salvie-tåge: sektionsflade */
+  --p-sand:#E6DAC2;        /* varm sand: støtte-flade */
+  --p-clay:#C76F52;        /* signal. Aldrig som tekst på lys flade */
+  --p-clay-deep:#A94F34;   /* knap og link på papir, hvid tekst 5,4:1 */
+  --p-clay-soft:#E39A80;   /* terrakotta på blæk, 7,6:1 */
+  --p-sage:#8A9A87;
+  --p-sage-deep:#566653;
+  --p-sage-soft:#B5C2B2;
+
+  /* ---------- Semantiske farver (lyst tema) ---------- */
+  --bg:var(--p-paper);
+  --bg-2:var(--p-paper-deep);      /* nedsænket flade */
+  --tint:var(--p-mist);            /* tonet sektion */
+  --warm:var(--p-sand);
+  --fg:var(--p-ink);
+  --fg-2:#4F4C45;                  /* sekundær tekst: 6,9:1 på papir, 5,0:1 på tåge */
+  --accent:var(--p-clay-deep);     /* links, knapper */
+  --accent-fill:var(--p-clay-deep);
+  --on-accent:#FFFFFF;
+  --signal:var(--p-clay);          /* grafik og detaljer */
+  --stroke:var(--p-ink);           /* 1px omrids på store flader */
+  --hair:rgba(26,26,24,.18);       /* skillelinjer */
+  --hair-strong:rgba(26,26,24,.42);
+  --inv-bg:var(--p-ink);           /* inverteret sektion */
+  --inv-fg:#F2EEE4;
+  --inv-fg-2:#C4C0B5;
+  --inv-hair:rgba(242,238,228,.18);
+  --inv-accent:var(--p-clay-soft);
+  --focus:var(--p-clay-deep);
+
+  /* Statusfarver (funktionelle, bruges altid sammen med tekst eller tal) */
+  --status-good:#A3B7A0;
+  --status-warn:#D9A84E;
+  --status-bad:#E5705A;
+
+  /* ---------- Typografi ---------- */
+  --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --num:"tnum" 1,"lnum" 1;
+
+  /* Skala: skærmbredde 375 til 1440 */
+  --fs-label:.75rem;                                    /* 12 */
+  --fs-small:.875rem;                                   /* 14 */
+  --fs-body:1.0625rem;                                  /* 17 */
+  --fs-lead:clamp(1.1875rem,1.05rem + .6vw,1.4375rem);  /* 19 til 23 */
+  --fs-h4:1.25rem;                                      /* 20, Inter */
+  --fs-h3:clamp(1.75rem,1.5rem + 1vw,2.25rem);          /* 28 til 36, serif */
+  --fs-h2:clamp(2.5rem,1.7rem + 3.4vw,4.5rem);          /* 40 til 72, serif */
+  --fs-h1:clamp(3.25rem,1.9rem + 6vw,7rem);             /* 52 til 112, serif */
+  --lh-tight:.98;
+  --lh-head:1.06;
+  --lh-body:1.65;
+  --track-label:.14em;
+  --measure:38rem;                                       /* cirka 68 tegn ved 17px */
+
+  /* ---------- Afstande (8-punkts skala, med halvtrin) ---------- */
+  --s-1:.25rem;   /* 4 */
+  --s-2:.5rem;    /* 8 */
+  --s-3:.75rem;   /* 12 */
+  --s-4:1rem;     /* 16 */
+  --s-5:1.5rem;   /* 24 */
+  --s-6:2rem;     /* 32 */
+  --s-7:3rem;     /* 48 */
+  --s-8:4rem;     /* 64 */
+  --s-9:6rem;     /* 96 */
+  --s-10:9rem;    /* 144 */
+  --section:clamp(var(--s-8),9vw,var(--s-10));
+  --gutter:clamp(1.25rem,4vw,2.5rem);
+  --content:80rem;                                       /* 1280 */
+
+  /* ---------- Former ---------- */
+  --r-xs:.5rem;    /* 8 */
+  --r-sm:1rem;     /* 16 */
+  --r-md:1.5rem;   /* 24 */
+  --r-lg:2rem;     /* 32 */
+  --r-xl:2.5rem;   /* 40 */
+  --r-pill:999px;
+  --hairline:1px;
+
+  /* ---------- Højde (kun hvor noget flyder) ---------- */
+  --e-1:0 1px 1px rgba(26,26,24,.04),0 1px 2px rgba(26,26,24,.06);
+  --e-2:0 1px 1px rgba(26,26,24,.04),0 4px 8px rgba(26,26,24,.05),0 16px 32px rgba(26,26,24,.07);
+  --e-3:0 2px 2px rgba(26,26,24,.04),0 8px 16px rgba(26,26,24,.06),0 32px 64px rgba(26,26,24,.10);
+
+  /* ---------- Bevægelse ---------- */
+  --dur-1:150ms;   /* tilstandsskift */
+  --dur-2:250ms;   /* hover, åbn/luk */
+  --dur-3:600ms;   /* indgang ved scroll */
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --ease-io:cubic-bezier(.6,0,.2,1);
+
+  --header-h:4.5rem;
+
+  /* Aliasser til de indlejrede stilarter i vejledningernes tegninger */
+  --color-paper:var(--bg);
+  --line:var(--hair);
+  --color-status-good:var(--status-good);
+  --color-status-warn:var(--status-warn);
+  --color-status-bad:var(--status-bad);
+}
+
+/* Mørkt tema følger telefonens indstilling. Måleren (html.tool) er altid mørk og har sine egne værdier i maal.css. */
+:root{color-scheme:light dark}
+:root.tool{color-scheme:dark}
+@media (prefers-color-scheme: dark){
+  :root:not(.tool){
+    --bg:#151513;
+    --bg-2:#1D1C19;
+    --tint:#222A22;
+    --warm:#2B2820;
+    --fg:#F2EEE4;
+    --fg-2:#BDB9AE;
+    --accent:#E39A80;
+    --accent-fill:#C76F52;
+    --on-accent:#1A1A18;
+    --stroke:rgba(242,238,228,.56);
+    --hair:rgba(242,238,228,.16);
+    --hair-strong:rgba(242,238,228,.42);
+    --inv-bg:#0D0D0C;
+    --focus:#E39A80;
+    --e-1:none;
+    --e-2:0 0 0 1px rgba(242,238,228,.06);
+    --e-3:0 24px 48px rgba(0,0,0,.45);
+  }
+}
