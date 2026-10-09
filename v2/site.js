@@ -64,23 +64,24 @@
   }
 
 
-  // Layout 1 / 2 på vejledningssiden. Valget huskes. Kortene glider til deres nye plads (FLIP).
-  var lt=document.querySelector('.layout-toggle'),grid=document.querySelector('.cols3[data-layout],.rows[data-layout]');
-  if(lt&&grid){
-    var KEY='beatmeter-layout',btns=Array.prototype.slice.call(lt.querySelectorAll('button'));
+  // Layout 1 / 2 (vejledningssiden og forsiden). Valget huskes og deles mellem siderne. Elementerne glider til deres nye plads (FLIP).
+  var lts=document.querySelectorAll('.layout-toggle'),grid=document.querySelector('.cols3[data-layout],main[data-layout]');
+  if(lts.length&&grid){
+    var KEY='beatmeter-layout',btns=Array.prototype.slice.call(document.querySelectorAll('.layout-toggle button'));
+    var MOVE='.list>a,.rows>a,.hero-top,.hero h1,.hero .lead,.hero .ctas,.hero .fine,.hero-shot,.strip .it,.flow li,.steps .step,.trio .mod,.rail .sec-head,.rail .headrow,.how .intro,.numbers';
     function setLayout(n,animate){
-      var items=animate&&!reduce?Array.prototype.slice.call(grid.querySelectorAll('.list>a,.rows>a')):[];
+      var items=animate&&!reduce?Array.prototype.slice.call(document.querySelectorAll(MOVE)):[];
       var before=items.map(function(e){return e.getBoundingClientRect()});
       grid.setAttribute('data-layout',n);
       btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-layout')===n?'true':'false')});
       items.forEach(function(e,i){
         var a=before[i],b=e.getBoundingClientRect(),dx=a.left-b.left,dy=a.top-b.top;
-        if(!dx&&!dy||!e.animate)return;
-        e.animate([{transform:'translate('+dx+'px,'+dy+'px)',opacity:.5},{transform:'none',opacity:1}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)',delay:Math.min(i,8)*30,fill:'backwards'});
+        if(!dx&&!dy||!e.animate||!b.width)return;
+        e.animate([{transform:'translate('+dx+'px,'+dy+'px)',opacity:.4},{transform:'none',opacity:1}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)',delay:Math.min(i,12)*25,fill:'backwards'});
       });
     }
     var saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
-    if(saved==='2')setLayout('2',false);
+    if(saved==='2')setLayout('2',false);else setLayout('1',false);
     btns.forEach(function(b){b.addEventListener('click',function(){
       var n=b.getAttribute('data-layout');
       if(grid.getAttribute('data-layout')===n)return;
